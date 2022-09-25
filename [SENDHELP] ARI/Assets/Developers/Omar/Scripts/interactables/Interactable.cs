@@ -10,7 +10,7 @@ public class Interactable : MonoBehaviour
     void Start()
     {
         
-        this.enabled = false;
+        this.enabled = true;
     }
 
     public virtual void Interact() 

@@ -29,6 +29,7 @@ public class Prop : Node
         // make object interactable 
         if(inter != null) 
         {
+            Cursor.lockState = CursorLockMode.None;
             col.enabled = true;
             inter.enabled = true;
 
@@ -42,8 +43,9 @@ public class Prop : Node
         if (inter != null)
         {
             
-            inter.enabled = false;
-
+            //inter.enabled = false;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.Locked;
 
         }
     }
@@ -51,7 +53,7 @@ public class Prop : Node
     public void Update()
     {
         // Key contol for interaction
-        if (Input.GetKeyDown(KeyCode.E) && inter.enabled) 
+        if (Input.GetKeyDown(KeyCode.E) && inter.enabled) //&& inter.enabled
         {
             inter.Interact();
         }

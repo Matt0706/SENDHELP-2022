@@ -38,6 +38,8 @@ TagManager:
   - VendingMachineTutorialDialogue
   - ArtDialogue
   - BlackboardDialogue
+  - Chip Node
+  - Terminal Node
   layers:
   - Default
   - TransparentFX
@@ -53,8 +55,8 @@ TagManager:
   - Obstacle
   - Wall
   - Float
-  - 
-  - 
+  - Ground
+  - Interactables
   - 
   - 
   - 
