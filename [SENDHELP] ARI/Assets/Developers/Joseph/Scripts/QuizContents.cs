@@ -50,12 +50,12 @@ public class QuizContents : MonoBehaviour
         "In general, the use of a passphrase is considered a best practice. Which of the following is the strongest example of a passphrase?",
         "By following best practices, what is the best way to create and store passwords?",
         "It is generally a good strategy to reuse passwords across multiple sites.",
-        "\"____\" is the study of secure communications techniques that allow only the sender and intended recipient of a message to view its contents",
+        "The study of hiding data from anyone but it's sender and recipients is called",
         "Can you decode this?",
         "Which of the following is not an aspect of multi-factor authentication?",
-        "In order to login to an account, you need a fingerprint and a password. This is an example of:",
-        "Choose the best answer. What should you do if a data breach happens on a website you use?",
-        "Is it ethical behavior to rely on transitive trust and passwords?"
+        "Requiring a fingerprint and a password is an example of:",
+        "Where should you change your password if a site that uses it has a data breach?",
+        "It is ethical behavior to rely on transitive trust and passwords."
     };
 
     List<List<string>> level1questionChoiceList = new List<List<string>>()
@@ -71,7 +71,7 @@ public class QuizContents : MonoBehaviour
             "password",
             "Admin123",
             "p@ssw0rd!",
-            "p@sSw0rd!"},  //2
+            "p@sSw0rD!"},  //2
         
         new List<string> {
             "Admin123",
@@ -114,9 +114,9 @@ public class QuizContents : MonoBehaviour
             "None of the above"},  //9
 
         new List<string> {
-            "Do nothing. You’re probably safe",
-            "Change the password on that specific site",
-            "Change the password on the breached site along with any other site that uses the breached password"},  //10
+            "None. You're probably safe",
+            "On that specific site",
+            "All sites using that password"},  //10
 
         new List<string> {
             "True",
@@ -126,7 +126,7 @@ public class QuizContents : MonoBehaviour
     List<string> level1questionAnswerList = new List<string>()
     {
         //"Uppercase letters",  //1
-        "p@sSw0rd!",  //2
+        "p@sSw0rD!",  //2
         "i<3C$4L!fe",  //3
         "Password Manager",  //4
         "False", //5
@@ -134,7 +134,7 @@ public class QuizContents : MonoBehaviour
         "A PET CAT", //7
         "Something you read", //8
         "Two-factor authentication", //9
-        "Change the password on the breached site along with any other site that uses the breached password", //10
+        "All sites using that password", //10
         "False" //11
     };
 
