@@ -5,6 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(CameraRig))]
 public class MouseControl : MonoBehaviour
 {
+
+
     // Public variables 
     //Default Sensitivity 
     public float XSensitivity = 2f; 
@@ -33,6 +35,8 @@ public class MouseControl : MonoBehaviour
 
     private void Update()
     {
+        
+
         Cursor.visible = true;
         // Check if left mouse button is being pressed and if the mouse is moving 
         if (Input.GetMouseButton(0) && (Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0)) 

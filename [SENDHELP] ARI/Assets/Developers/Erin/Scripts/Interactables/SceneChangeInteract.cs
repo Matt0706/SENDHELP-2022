@@ -20,14 +20,14 @@ public class SceneChangeInteract : Interactable
     void Start()
     {
         //Disable object at start
-        this.enabled = false;
+        this.enabled = true;
       
     }
 
     // Bool will initiate fade sequence and call delayed scene change
     public override void Interact()
     {
-        ;
+        
         // Immediate Change to Scene Specified by Name - Will change to accommodate for loading screens
         LevelSelection.levelListDone.Add(levelDone);
         source.PlayOneShot(clip, 7f);

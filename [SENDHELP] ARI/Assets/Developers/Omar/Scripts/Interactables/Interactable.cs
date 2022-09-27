@@ -9,8 +9,8 @@ public class Interactable : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-        this.enabled = false;
+       
+        this.enabled = true;
     }
 
     public virtual void Interact() 
