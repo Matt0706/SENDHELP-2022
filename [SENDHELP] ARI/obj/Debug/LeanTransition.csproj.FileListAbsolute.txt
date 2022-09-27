@@ -1,2 +1,0 @@
-C:\Users\jonah\OneDrive\Desktop\capping\SENDHELP-2022\[SENDHELP] ARI\obj\Debug\LeanTransition.csproj.AssemblyReference.cache
-C:\Users\jonah\OneDrive\Desktop\capping\SENDHELP-2022\[SENDHELP] ARI\obj\Debug\LeanTransition.csproj.CoreCompileInputs.cache
