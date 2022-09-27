@@ -16,7 +16,6 @@ public class InteractLogic : MonoBehaviour
     public AudioSource source;
     public AudioClip clip;
     public string objectTag;
-
     public GameObject terminal;
     bool keyGrabbed;
     bool interacting = false;
@@ -91,13 +90,7 @@ public class InteractLogic : MonoBehaviour
                     anim.SetBool("MinigameWon", true);
                     Invoke("DelayedAction", delayTime);
                 }
-
-
-
-
-
-            }
-            
+            }           
         }
     }
 

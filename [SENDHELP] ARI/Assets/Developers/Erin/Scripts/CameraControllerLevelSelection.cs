@@ -20,6 +20,10 @@ public class CameraControllerLevelSelection : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        currentView = views[0];
+        
         // Will need to find another way to assign listeners to the buttons in a more organized way
         selections[0].onClick.AddListener(NoviceSelected);
         selections[1].onClick.AddListener(ProficientSelected);
