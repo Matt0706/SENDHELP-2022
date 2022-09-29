@@ -8034,7 +8034,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 126209260, guid: 5f61bc6ad093a1346924132db2f344b9, type: 3}
   m_PrefabInstance: {fileID: 7190851603241998709}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 7190851603241998710}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 86c90e9d86122e64ba599a323568949f, type: 3}
@@ -14003,7 +14003,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 2124793012}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 207586353}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9dbae0e9cf1c339469dc58d93663a837, type: 3}
   m_Name: 
@@ -33080,7 +33080,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 2117698217}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 697499419}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9dbae0e9cf1c339469dc58d93663a837, type: 3}
   m_Name: 
@@ -33413,7 +33413,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 904098100}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 717708808}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9dbae0e9cf1c339469dc58d93663a837, type: 3}
   m_Name: 
@@ -33425,7 +33425,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 717708808}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d3e5ae7927247cd40bfcffdd30c7f4cf, type: 3}
   m_Name: 
@@ -33449,6 +33449,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5, z: 0.5}
   m_Center: {x: 0, y: 0.25, z: 0}
+--- !u!114 &717708812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 717708808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3016393f143c2d4ea925ce6138286cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &718062796
 GameObject:
   m_ObjectHideFlags: 0
@@ -46818,13 +46830,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -0.002
       objectReference: {fileID: 0}
+    - target: {fileID: 1888296233243989675, guid: 62c2d2863cc91ae4c969b5dfbaba465c, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1888296233316019554, guid: 62c2d2863cc91ae4c969b5dfbaba465c, type: 3}
       propertyPath: m_Name
       value: (S) Greenhouse Terminal Node
       objectReference: {fileID: 0}
     - target: {fileID: 1888296233316019554, guid: 62c2d2863cc91ae4c969b5dfbaba465c, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888296233316019554, guid: 62c2d2863cc91ae4c969b5dfbaba465c, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Terminal Node
       objectReference: {fileID: 0}
     - target: {fileID: 1888296233316019564, guid: 62c2d2863cc91ae4c969b5dfbaba465c, type: 3}
       propertyPath: m_RootOrder
@@ -46886,6 +46906,10 @@ PrefabInstance:
       propertyPath: loc
       value: 
       objectReference: {fileID: 663239311}
+    - target: {fileID: 1888296233316019565, guid: 62c2d2863cc91ae4c969b5dfbaba465c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1888296233316019565, guid: 62c2d2863cc91ae4c969b5dfbaba465c, type: 3}
       propertyPath: reachableNodes.Array.size
       value: 0
@@ -51966,6 +51990,10 @@ PrefabInstance:
     - target: {fileID: 7737259515347223960, guid: 2df01c394d528d142b71614633789a12, type: 3}
       propertyPath: m_Name
       value: Starting Point
+      objectReference: {fileID: 0}
+    - target: {fileID: 7737259515347223961, guid: 2df01c394d528d142b71614633789a12, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7737259515347223966, guid: 2df01c394d528d142b71614633789a12, type: 3}
       propertyPath: reachableNodes.Array.size
@@ -63249,9 +63277,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2041454525}
     m_Modifications:
+    - target: {fileID: 1182431919570870, guid: 00931e932c93cef48ae2d8cc87408c66, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1884156196641044, guid: 00931e932c93cef48ae2d8cc87408c66, type: 3}
       propertyPath: m_Name
       value: Notepad
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884156196641044, guid: 00931e932c93cef48ae2d8cc87408c66, type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4527064727974542, guid: 00931e932c93cef48ae2d8cc87408c66, type: 3}
       propertyPath: m_RootOrder
@@ -76347,7 +76383,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7737259515347223961, guid: 2df01c394d528d142b71614633789a12, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7737259515347223961, guid: 2df01c394d528d142b71614633789a12, type: 3}
       propertyPath: m_IsTrigger
@@ -95263,7 +95299,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1621707307}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Camera Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100120,6 +100156,14 @@ PrefabInstance:
     - target: {fileID: 1158754678514140, guid: 0bc9f3e0b20fe984697b880329a181fd, type: 3}
       propertyPath: m_Name
       value: Pen
+      objectReference: {fileID: 0}
+    - target: {fileID: 1158754678514140, guid: 0bc9f3e0b20fe984697b880329a181fd, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1825006966832668, guid: 0bc9f3e0b20fe984697b880329a181fd, type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4414685883407140, guid: 0bc9f3e0b20fe984697b880329a181fd, type: 3}
       propertyPath: m_RootOrder
@@ -114346,9 +114390,10 @@ GameObject:
   - component: {fileID: 2041454525}
   - component: {fileID: 2041454524}
   - component: {fileID: 2041454523}
-  m_Layer: 0
+  - component: {fileID: 2041454526}
+  m_Layer: 15
   m_Name: GreenhouseLearningSheetNode
-  m_TagString: Untagged
+  m_TagString: Greenhouse Pad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114399,6 +114444,18 @@ Transform:
   m_Father: {fileID: 1154184780}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -14.864, y: -77.133, z: 48.315}
+--- !u!114 &2041454526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041454522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf65926d6c58df14d8569d6a72d6a127, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2041598049
 GameObject:
   m_ObjectHideFlags: 0
@@ -120925,9 +120982,17 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.05066172
       objectReference: {fileID: 0}
+    - target: {fileID: 1888296233243989675, guid: 62c2d2863cc91ae4c969b5dfbaba465c, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1888296233316019554, guid: 62c2d2863cc91ae4c969b5dfbaba465c, type: 3}
       propertyPath: m_Name
       value: Starting Point Sign Node
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888296233316019554, guid: 62c2d2863cc91ae4c969b5dfbaba465c, type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1888296233316019564, guid: 62c2d2863cc91ae4c969b5dfbaba465c, type: 3}
       propertyPath: m_RootOrder
@@ -120989,6 +121054,10 @@ PrefabInstance:
       propertyPath: loc
       value: 
       objectReference: {fileID: 918514176}
+    - target: {fileID: 1888296233316019565, guid: 62c2d2863cc91ae4c969b5dfbaba465c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1888296233316019565, guid: 62c2d2863cc91ae4c969b5dfbaba465c, type: 3}
       propertyPath: reachableNodes.Array.size
       value: 0
@@ -121345,6 +121414,10 @@ PrefabInstance:
       propertyPath: loc
       value: 
       objectReference: {fileID: 883088780}
+    - target: {fileID: 1888296233316019565, guid: 62c2d2863cc91ae4c969b5dfbaba465c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1888296233316019565, guid: 62c2d2863cc91ae4c969b5dfbaba465c, type: 3}
       propertyPath: reachableNodes.Array.size
       value: 0
@@ -121738,3 +121811,40 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f61bc6ad093a1346924132db2f344b9, type: 3}
+--- !u!1 &7190851603241998710 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5975677543767522400, guid: 5f61bc6ad093a1346924132db2f344b9, type: 3}
+  m_PrefabInstance: {fileID: 7190851603241998709}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7190851603241998711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7190851603241998710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64bbed3272cdcfc45b8d548b05ebca95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 1.52
+  mask:
+    serializedVersion: 2
+    m_Bits: 32768
+  interact: {fileID: 1351956458}
+  cam: {fileID: 1252864584}
+  num: 0
+  source: {fileID: 0}
+  clip: {fileID: 0}
+  terminal: {fileID: 0}
+  notepadCollider: {fileID: 2041454523}
+  dialogueAnimation:
+  - {fileID: 288320043}
+  SceneToLoad: PasswordTerminal
+  delayTime: 3
+  levelDone: 3
+  anim: {fileID: 1304427068}
+  terminalSource: {fileID: 1837680142}
+  terminalClip: {fileID: 8300000, guid: 078a6a7800affd94aad4531c5453c66c, type: 3}
+  terminalCollider: {fileID: 717708811}

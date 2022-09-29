@@ -40,6 +40,8 @@ TagManager:
   - BlackboardDialogue
   - Chip Node
   - Terminal Node
+  - Greenhouse Pad
+  - Access Node
   layers:
   - Default
   - TransparentFX

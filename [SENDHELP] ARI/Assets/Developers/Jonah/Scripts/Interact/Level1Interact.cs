@@ -1,24 +1,29 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-public class InteractLogic : MonoBehaviour
+public class Level1Interact : MonoBehaviour
 {
     [SerializeField] private float distance = 1f;
     [SerializeField] private LayerMask mask;
     public Animator interact;
     public Camera cam;
     private Camera cameraPrivate;
+    bool interacting = false;
 
-    //Keycard Variables
+    //Notepad Variables
     public AudioSource source;
     public AudioClip clip;
-    public string objectTag;
     public GameObject terminal;
-    bool keyGrabbed;
-    bool interacting = false;
+    bool padRead;
+    public Collider notepadCollider;
+
+    //Dialogue
+    public Animator[] dialogueAnimation;
+
 
     //Terminal Variables
     public string SceneToLoad;
@@ -33,21 +38,21 @@ public class InteractLogic : MonoBehaviour
 
     void Start()
     {
-        cameraPrivate = GetComponent<InteractLogic>().cam;
+        cameraPrivate = GetComponent<Level1Interact>().cam;
         terminal.GetComponent<SceneChangeInteract>().enabled = false;
-        keyGrabbed = false;
-
+        padRead = false;
     }
 
-    
+
     void Update()
     {
+        notepadCollider.enabled = true;
         UpdateUIDisappear();
 
         //Creates an array at the center of the player camera
         Ray ray = new Ray(cameraPrivate.transform.position, cameraPrivate.transform.forward);
         Debug.DrawRay(ray.origin, ray.direction * distance);
-        
+
         //Collision information
         RaycastHit hitInfo;
         if (Physics.Raycast(ray, out hitInfo, distance, mask))
@@ -56,41 +61,34 @@ public class InteractLogic : MonoBehaviour
             {
                 interacting = true;
                 UpdateUIAppear();
-                
             }
             else
             {
                 interacting = false;
             }
 
-            // Key contol for interaction
+            // Contol for interaction
             if (Input.GetKeyDown(KeyCode.E) && interacting == true)
             {
-                
+                Debug.LogWarning("E Was Pressed!");
 
-                //Keycard Grabbed
-                if (hitInfo.collider.name == "Chip Node")
+                //Notepad Grabbed
+                if (hitInfo.collider.CompareTag("Greenhouse Pad"))
                 {
-                    keyGrabbed = true;
-
+                    padRead = true;
                     terminalCollider.enabled = true;
-
-                    // Play sound on interact
-                    source.PlayOneShot(clip, 7f);
-                    //Destroy object
-                    Destroy(GameObject.FindWithTag("Chip Node"));
-                    Debug.Log("Destroy " + "Chip Node");
+                    //var dialogue = FindObjectOfType<DialoguePrompt>();
+                    UIAppear(0);
                 }
 
-                if (hitInfo.collider.name == "Terminal Node" && keyGrabbed == true)
+                if (hitInfo.collider.CompareTag("Terminal Node") && padRead == true)
                 {
                     LevelSelection.levelListDone.Add(levelDone);
                     source.PlayOneShot(clip, 7f);
                     anim.SetBool("MinigameWon", true);
                     Invoke("DelayedAction", delayTime);
-
                 }
-            }           
+            }
         }
     }
 
@@ -103,6 +101,20 @@ public class InteractLogic : MonoBehaviour
     public void UpdateUIDisappear()
     {
         interact.SetBool("IsOpen", false);
+    }
+
+    public void UIAppear(int num)
+    {
+        dialogueAnimation[num].SetBool("IsPrompted", true);
+        Debug.Log("New Dialogue/Interaction Found: ");
+
+    }
+
+    // UI DISAPPEAR
+    public void UIDisappear(int num)
+    {
+        dialogueAnimation[num].SetBool("IsPrompted", false);
+        Debug.Log("Walked Out of Range of Dialogue/Interaction");
     }
 
     void DelayedAction()

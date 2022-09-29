@@ -12,10 +12,10 @@ public class DialoguePrompt : MonoBehaviour
     // VARIABLES - Currently inefficient way to store animators, will find another way to reference
     public Animator[] animators;
     //public Animator prompt5;
-    private int num, convoNum;
+    
 
     // ONTRIGGER - ENTER
-    void OnTriggerEnter(Collider other)
+    /*void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("StartUpDialogue"))
         {
@@ -178,10 +178,10 @@ public class DialoguePrompt : MonoBehaviour
             num = 28;
             UIAppear(num);
         }
-    }
+    }*/
     
 
-    // ONTRIGGER - EXIT
+    /*// ONTRIGGER - EXIT
     void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("StartUpDialogue"))
@@ -345,308 +345,21 @@ public class DialoguePrompt : MonoBehaviour
             num = 28;
             UIDisappear(num);
         }
-    }
+    }*/
 
     // UI APPEAR
     public void UIAppear(int num)
     {
-        convoNum = num;
-        if (convoNum == 0)
-        {
-            animators[convoNum].SetBool("IsPrompted", true);
-            Debug.Log("New Dialogue/Interaction Found: ");
-        }
-        if (convoNum == 1)
-        {
-            animators[convoNum].SetBool("IsPrompted", true);
-            Debug.Log("New Dialogue/Interaction Found: ");
-        }
-        if (convoNum == 2)
-        {
-            animators[convoNum].SetBool("IsPrompted", true);
-            Debug.Log("New Dialogue/Interaction Found: ");
-        }
-        if (convoNum == 3)
-        {
-            animators[convoNum].SetBool("IsPrompted", true);
-            Debug.Log("New Dialogue/Interaction Found: ");
-        }
-        if (convoNum == 4)
-        {
-            animators[convoNum].SetBool("IsPrompted", true);
-            Debug.Log("New Dialogue/Interaction Found: ");
-        }
-        if (convoNum == 5)
-        {
-            animators[convoNum].SetBool("IsPrompted", true);
-            Debug.Log("New Dialogue/Interaction Found: ");
-        }
-        if (convoNum == 6)
-        {
-            animators[convoNum].SetBool("IsPrompted", true);
-            Debug.Log("New Dialogue/Interaction Found: ");
-        }
-        if (convoNum == 7)
-        {
-            animators[convoNum].SetBool("IsPrompted", true);
-            Debug.Log("New Dialogue/Interaction Found: ");
-        }
-        if (convoNum == 8)
-        {
-            animators[convoNum].SetBool("IsPrompted", true);
-            Debug.Log("New Dialogue/Interaction Found: ");
-        }
-        if (convoNum == 9)
-        {
-            animators[convoNum].SetBool("IsPrompted", true);
-            Debug.Log("New Dialogue/Interaction Found: ");
-        }
-        if (convoNum == 10)
-        {
-            animators[convoNum].SetBool("IsPrompted", true);
-            Debug.Log("New Dialogue/Interaction Found: ");
-        }
-        if (convoNum == 11)
-        {
-            animators[convoNum].SetBool("IsPrompted", true);
-            Debug.Log("New Dialogue/Interaction Found: ");
-        }
-        if (convoNum == 12)
-        {
-            animators[convoNum].SetBool("IsPrompted", true);
-            Debug.Log("New Dialogue/Interaction Found: ");
-        }
-        if (convoNum == 13)
-        {
-            animators[convoNum].SetBool("IsPrompted", true);
-            Debug.Log("New Dialogue/Interaction Found: ");
-        }
-        if (convoNum == 14)
-        {
-            animators[convoNum].SetBool("IsPrompted", true);
-            Debug.Log("New Dialogue/Interaction Found: ");
-        }
-        if (convoNum == 15)
-        {
-            animators[convoNum].SetBool("IsPrompted", true);
-            Debug.Log("New Dialogue/Interaction Found: ");
-        }
-        if (convoNum == 16)
-        {
-            animators[convoNum].SetBool("IsPrompted", true);
-            Debug.Log("New Dialogue/Interaction Found: ");
-        }
-        if (convoNum == 17)
-        {
-            animators[convoNum].SetBool("IsPrompted", true);
-            Debug.Log("New Dialogue/Interaction Found: ");
-        }
-        if (convoNum == 18)
-        {
-            animators[convoNum].SetBool("IsPrompted", true);
-            Debug.Log("New Dialogue/Interaction Found: ");
-        }
-        if (convoNum == 19)
-        {
-            animators[convoNum].SetBool("IsPrompted", true);
-            Debug.Log("New Dialogue/Interaction Found: ");
-        }
-        if (convoNum == 20)
-        {
-            animators[convoNum].SetBool("IsPrompted", true);
-            Debug.Log("New Dialogue/Interaction Found: ");
-        }
-        if (convoNum == 21)
-        {
-            animators[convoNum].SetBool("IsPrompted", true);
-            Debug.Log("New Dialogue/Interaction Found: ");
-        }
-        if (convoNum == 22)
-        {
-            animators[convoNum].SetBool("IsPrompted", true);
-            Debug.Log("New Dialogue/Interaction Found: ");
-        }
-        if (convoNum == 23)
-        {
-            animators[convoNum].SetBool("IsPrompted", true);
-            Debug.Log("New Dialogue/Interaction Found: ");
-        }
-        if (convoNum == 24)
-        {
-            animators[convoNum].SetBool("IsPrompted", true);
-            Debug.Log("New Dialogue/Interaction Found: ");
-        }
-        if (convoNum == 25)
-        {
-            animators[convoNum].SetBool("IsPrompted", true);
-            Debug.Log("New Dialogue/Interaction Found: ");
-        }
-        if (convoNum == 26)
-        {
-            animators[convoNum].SetBool("IsPrompted", true);
-            Debug.Log("New Dialogue/Interaction Found: ");
-        }
-        if (convoNum == 27)
-        {
-            animators[convoNum].SetBool("IsPrompted", true);
-            Debug.Log("New Dialogue/Interaction Found: ");
-        }
-        if (convoNum == 28)
-        {
-            animators[convoNum].SetBool("IsPrompted", true);
-            Debug.Log("New Dialogue/Interaction Found: ");
-        }
+        animators[num].SetBool("IsPrompted", true);
+        Debug.Log("New Dialogue/Interaction Found: ");
+        
     }
 
     // UI DISAPPEAR
     public void UIDisappear(int num)
     {
-        convoNum = num;
-        if (convoNum == 0)
-        {
-            animators[convoNum].SetBool("IsPrompted", false);
-            Debug.Log("Walked Out of Range of Dialogue/Interaction");
-        }
-        if (convoNum == 1)
-        {
-            animators[convoNum].SetBool("IsPrompted", false);
-            Debug.Log("Walked Out of Range of Dialogue/Interaction");
-        }
-        if (convoNum == 2)
-        {
-            animators[convoNum].SetBool("IsPrompted", false);
-            Debug.Log("Walked Out of Range of Dialogue/Interaction");
-        }
-        if (convoNum == 3)
-        {
-            animators[convoNum].SetBool("IsPrompted", false);
-            Debug.Log("Walked Out of Range of Dialogue/Interaction");
-        }
-        if (convoNum == 4)
-        {
-            animators[convoNum].SetBool("IsPrompted", false);
-            Debug.Log("Walked Out of Range of Dialogue/Interaction");
-        }
-        if (convoNum == 5)
-        {
-            animators[convoNum].SetBool("IsPrompted", false);
-            Debug.Log("Walked Out of Range of Dialogue/Interaction");
-        }
-        if (convoNum == 6)
-        {
-            animators[convoNum].SetBool("IsPrompted", false);
-            Debug.Log("Walked Out of Range of Dialogue/Interaction");
-        }
-        if (convoNum == 7)
-        {
-            animators[convoNum].SetBool("IsPrompted", false);
-            Debug.Log("Walked Out of Range of Dialogue/Interaction");
-        }
-        if (convoNum == 8)
-        {
-            animators[convoNum].SetBool("IsPrompted", false);
-            Debug.Log("Walked Out of Range of Dialogue/Interaction");
-        }
-        if (convoNum == 9)
-        {
-            animators[convoNum].SetBool("IsPrompted", false);
-            Debug.Log("Walked Out of Range of Dialogue/Interaction");
-        }
-        if (convoNum == 10)
-        {
-            animators[convoNum].SetBool("IsPrompted", false);
-            Debug.Log("Walked Out of Range of Dialogue/Interaction");
-        }
-        if (convoNum == 11)
-        {
-            animators[convoNum].SetBool("IsPrompted", false);
-            Debug.Log("Walked Out of Range of Dialogue/Interaction");
-        }
-        if (convoNum == 12)
-        {
-            animators[convoNum].SetBool("IsPrompted", false);
-            Debug.Log("Walked Out of Range of Dialogue/Interaction");
-        }
-        if (convoNum == 13)
-        {
-            animators[convoNum].SetBool("IsPrompted", false);
-            Debug.Log("Walked Out of Range of Dialogue/Interaction");
-        }
-        if (convoNum == 14)
-        {
-            animators[convoNum].SetBool("IsPrompted", false);
-            Debug.Log("Walked Out of Range of Dialogue/Interaction");
-        }
-        if (convoNum == 15)
-        {
-            animators[convoNum].SetBool("IsPrompted", false);
-            Debug.Log("Walked Out of Range of Dialogue/Interaction");
-        }
-        if (convoNum == 16)
-        {
-            animators[convoNum].SetBool("IsPrompted", false);
-            Debug.Log("Walked Out of Range of Dialogue/Interaction");
-        }
-        if (convoNum == 17)
-        {
-            animators[convoNum].SetBool("IsPrompted", false);
-            Debug.Log("Walked Out of Range of Dialogue/Interaction");
-        }
-        if (convoNum == 18)
-        {
-            animators[convoNum].SetBool("IsPrompted", false);
-            Debug.Log("Walked Out of Range of Dialogue/Interaction");
-        }
-        if (convoNum == 19)
-        {
-            animators[convoNum].SetBool("IsPrompted", false);
-            Debug.Log("Walked Out of Range of Dialogue/Interaction");
-        }
-        if (convoNum == 20)
-        {
-            animators[convoNum].SetBool("IsPrompted", false);
-            Debug.Log("Walked Out of Range of Dialogue/Interaction");
-        }
-        if (convoNum == 21)
-        {
-            animators[convoNum].SetBool("IsPrompted", false);
-            Debug.Log("Walked Out of Range of Dialogue/Interaction");
-        }
-        if (convoNum == 22)
-        {
-            animators[convoNum].SetBool("IsPrompted", false);
-            Debug.Log("Walked Out of Range of Dialogue/Interaction");
-        }
-        if (convoNum == 23)
-        {
-            animators[convoNum].SetBool("IsPrompted", false);
-            Debug.Log("Walked Out of Range of Dialogue/Interaction");
-        }
-        if (convoNum == 24)
-        {
-            animators[convoNum].SetBool("IsPrompted", false);
-            Debug.Log("Walked Out of Range of Dialogue/Interaction");
-        }
-        if (convoNum == 25)
-        {
-            animators[convoNum].SetBool("IsPrompted", false);
-            Debug.Log("Walked Out of Range of Dialogue/Interaction");
-        }
-        if (convoNum == 26)
-        {
-            animators[convoNum].SetBool("IsPrompted", false);
-            Debug.Log("Walked Out of Range of Dialogue/Interaction");
-        }
-        if (convoNum == 27)
-        {
-            animators[convoNum].SetBool("IsPrompted", false);
-            Debug.Log("Walked Out of Range of Dialogue/Interaction");
-        }
-        if (convoNum == 28)
-        {
-            animators[convoNum].SetBool("IsPrompted", false);
-            Debug.Log("Walked Out of Range of Dialogue/Interaction");
-        }
+        animators[num].SetBool("IsPrompted", false);
+        Debug.Log("Walked Out of Range of Dialogue/Interaction");       
     }
 
 }
