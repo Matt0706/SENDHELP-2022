@@ -8029,17 +8029,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7257136043761880691, guid: 5f61bc6ad093a1346924132db2f344b9, type: 3}
   m_PrefabInstance: {fileID: 7190851603241998709}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &126209260 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 126209260, guid: 5f61bc6ad093a1346924132db2f344b9, type: 3}
-  m_PrefabInstance: {fileID: 7190851603241998709}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7190851603241998710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c90e9d86122e64ba599a323568949f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &128690566
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -113817,7 +113806,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingNode: {fileID: 918514176}
   currentNode: {fileID: 0}
-  rig: {fileID: 126209260}
+  rig: {fileID: 0}
 --- !u!4 &2014195423
 Transform:
   m_ObjectHideFlags: 0
@@ -121809,7 +121798,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 126209261, guid: 5f61bc6ad093a1346924132db2f344b9, type: 3}
+    - {fileID: 2435376503987223222, guid: 5f61bc6ad093a1346924132db2f344b9, type: 3}
+    - {fileID: 126209260, guid: 5f61bc6ad093a1346924132db2f344b9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5f61bc6ad093a1346924132db2f344b9, type: 3}
 --- !u!1 &7190851603241998710 stripped
 GameObject:
@@ -121834,7 +121826,6 @@ MonoBehaviour:
     m_Bits: 32768
   interact: {fileID: 1351956458}
   cam: {fileID: 1252864584}
-  num: 0
   source: {fileID: 0}
   clip: {fileID: 0}
   terminal: {fileID: 0}

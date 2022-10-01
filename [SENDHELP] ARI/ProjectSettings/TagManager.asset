@@ -42,6 +42,9 @@ TagManager:
   - Terminal Node
   - Greenhouse Pad
   - Access Node
+  - Swipe Access
+  - Storage Room Pad
+  - Living Quarters Pad
   layers:
   - Default
   - TransparentFX
