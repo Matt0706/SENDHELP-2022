@@ -45,6 +45,8 @@ TagManager:
   - Swipe Access
   - Storage Room Pad
   - Living Quarters Pad
+  - Nav Room Pad
+  - Nav Swipe Access
   layers:
   - Default
   - TransparentFX

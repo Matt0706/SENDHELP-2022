@@ -12,15 +12,21 @@ public class Lvl1term3Interact : MonoBehaviour
     private Camera cameraPrivate;
     bool interacting = false;
 
-    //SwipeAccess Variables
+    //Exit SwipeAccess Variables
+    public AudioSource exitswipeSource;
+    public AudioClip exitswipeClip;
+    public Animator exitswipeAnim;
+    public Collider exitswipeCollider;
+    public string SceneToLoad;
+    public int delayTime;
+    public int levelDone;
+
+    //Nav SwipeAccess Variables
     public AudioSource swipeSource;
     public AudioClip swipeClip;
     public Animator swipeAnim;
     public Collider swipeCollider;
-    public string SceneToLoad;
-    public int delayTime;
-    public int levelDone;
-    public Animator anim;
+
 
     //Notepad for storage room variables
     public AudioSource note1Source;
@@ -70,29 +76,30 @@ public class Lvl1term3Interact : MonoBehaviour
                 Debug.LogWarning("E Was Pressed!");
 
                 //SwipeAccess 
-                if (hitInfo.collider.CompareTag("Swipe Access"))
+                if (hitInfo.collider.CompareTag("Nav Swipe Access"))
                 {
-                    swipeSource.PlayOneShot(swipeClip, 7f);
+                    swipeSource.PlayOneShot(exitswipeClip, 7f);
                     Debug.Log("Sound Played");
                     swipeAnim.SetBool("hasAccessKey", true);
                 }
 
 
                 //Server Notepad
-                if (hitInfo.collider.CompareTag("Storage Room Pad"))
+                if (hitInfo.collider.CompareTag("Nav Room Pad"))
                 {
                     padRead1 = true;
+                    exitswipeCollider.enabled = true;
                 }
 
                 
 
 
                 //Terminal
-                if (hitInfo.collider.CompareTag("SaveNode") && padRead1 == true)
+                if (hitInfo.collider.CompareTag("Swipe Access") && padRead1 == true)
                 {
                     LevelSelection.levelListDone.Add(levelDone);
-                    swipeSource.PlayOneShot(swipeClip, 7f);
-                    anim.SetBool("MinigameWon", true);
+                    exitswipeSource.PlayOneShot(exitswipeClip, 7f);
+                    exitswipeAnim.SetBool("MinigameWon", true);
                     Invoke("DelayedAction", delayTime);
                 }
             }

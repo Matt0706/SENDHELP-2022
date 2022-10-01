@@ -21,6 +21,8 @@ public class CameraControllerQuizzes : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         currentView = views[0];
         Invoke("DelayedAction", delayTime);
     }

@@ -27,7 +27,7 @@ public class Lvl1term2Interact : MonoBehaviour
     bool padRead1;
     public Collider notepad1Collider;
 
-    //Notepad for storage room variables
+    //Notepad for  room variables
     public AudioSource note2Source;
     public AudioClip note2Clip;
     public Collider notepad2Collider;
