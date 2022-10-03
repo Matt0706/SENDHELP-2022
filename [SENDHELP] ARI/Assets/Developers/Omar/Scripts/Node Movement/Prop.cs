@@ -52,10 +52,14 @@ public class Prop : Node
 
     public void Update()
     {
-        // Key contol for interaction
-        if (Input.GetKeyDown(KeyCode.E) && inter.enabled) //&& inter.enabled
+        if(inter != null)
         {
-            inter.Interact();
+            if (Input.GetKeyDown(KeyCode.E) && inter.enabled) //&& inter.enabled
+            {
+                inter.Interact();
+            }
         }
+        // Key contol for interaction
+        
     }
 }

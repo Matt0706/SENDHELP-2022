@@ -17,7 +17,6 @@ public class Level1Interact : MonoBehaviour
     //Notepad Variables
     public AudioSource source;
     public AudioClip clip;
-    public GameObject terminal;
     bool padRead;
     public Collider notepadCollider;
 
@@ -39,7 +38,6 @@ public class Level1Interact : MonoBehaviour
     void Start()
     {
         cameraPrivate = GetComponent<Level1Interact>().cam;
-        terminal.GetComponent<SceneChangeInteract>().enabled = false;
         padRead = false;
     }
 
@@ -84,7 +82,7 @@ public class Level1Interact : MonoBehaviour
                 if (hitInfo.collider.CompareTag("Terminal Node") && padRead == true)
                 {
                     LevelSelection.levelListDone.Add(levelDone);
-                    source.PlayOneShot(clip, 7f);
+                    terminalSource.PlayOneShot(terminalClip, 7f);
                     anim.SetBool("MinigameWon", true);
                     Invoke("DelayedAction", delayTime);
                 }

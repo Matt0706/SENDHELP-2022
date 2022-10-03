@@ -17,7 +17,6 @@ public class Lvl1term1Interact : MonoBehaviour
     //SwipeAccess Variables
     public AudioSource swipeSource;
     public AudioClip swipeClip;
-    public GameObject terminal;
     public Animator swipeAnim;
     public Collider swipeCollider;
 
@@ -47,7 +46,6 @@ public class Lvl1term1Interact : MonoBehaviour
     void Start()
     {
         cameraPrivate = GetComponent<Lvl1term1Interact>().cam;
-        terminal.GetComponent<SceneChangeInteract>().enabled = false;
         padRead = false;
     }
 

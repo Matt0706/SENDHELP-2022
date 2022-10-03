@@ -44,7 +44,8 @@ public abstract class Node : MonoBehaviour
         GameManager.ins.currentNode = this;
 
         // move camera
-        GameManager.ins.rig.AlignTo(cameraPosition);
+        
+       // GameManager.ins.rig.AlignTo(cameraPosition);
 
 
 
