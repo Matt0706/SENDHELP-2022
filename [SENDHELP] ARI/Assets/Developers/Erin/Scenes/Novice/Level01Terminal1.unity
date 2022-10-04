@@ -9731,7 +9731,6 @@ MonoBehaviour:
   cam: {fileID: 1252864584}
   swipeSource: {fileID: 921886965}
   swipeClip: {fileID: 8300000, guid: 0c008ee3ee72a4362a35be25fa5de043, type: 3}
-  terminal: {fileID: 0}
   swipeAnim: {fileID: 167622596}
   swipeCollider: {fileID: 207586356}
   noteSource: {fileID: 0}

@@ -20,10 +20,6 @@ public class Level1Interact : MonoBehaviour
     bool padRead;
     public Collider notepadCollider;
 
-    //Dialogue
-    public Animator[] dialogueAnimation;
-
-
     //Terminal Variables
     public string SceneToLoad;
     public int delayTime;
@@ -32,6 +28,8 @@ public class Level1Interact : MonoBehaviour
     public AudioSource terminalSource;
     public AudioClip terminalClip;
     public Collider terminalCollider;
+
+    
 
 
 
@@ -75,8 +73,8 @@ public class Level1Interact : MonoBehaviour
                 {
                     padRead = true;
                     terminalCollider.enabled = true;
-                    //var dialogue = FindObjectOfType<DialoguePrompt>();
-                    UIAppear(0);
+                    var dialogueTrigger = FindObjectOfType<DialogueTrigger>();
+                    dialogueTrigger.TriggerDialogue();                 
                 }
 
                 if (hitInfo.collider.CompareTag("Terminal Node") && padRead == true)
@@ -90,6 +88,8 @@ public class Level1Interact : MonoBehaviour
         }
     }
 
+
+    //Displays "E" to interact
     public void UpdateUIAppear()
     {
         interact.SetBool("IsOpen", true);
@@ -101,20 +101,7 @@ public class Level1Interact : MonoBehaviour
         interact.SetBool("IsOpen", false);
     }
 
-    public void UIAppear(int num)
-    {
-        dialogueAnimation[num].SetBool("IsPrompted", true);
-        Debug.Log("New Dialogue/Interaction Found: ");
-
-    }
-
-    // UI DISAPPEAR
-    public void UIDisappear(int num)
-    {
-        dialogueAnimation[num].SetBool("IsPrompted", false);
-        Debug.Log("Walked Out of Range of Dialogue/Interaction");
-    }
-
+    //For Scene Change
     void DelayedAction()
     {
         Debug.Log("Waiting for " + delayTime + " Seconds till next task.");
