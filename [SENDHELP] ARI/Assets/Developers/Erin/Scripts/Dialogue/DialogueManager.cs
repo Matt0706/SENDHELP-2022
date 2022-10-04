@@ -18,16 +18,27 @@ public class DialogueManager : MonoBehaviour
     public AudioSource source;
     public AudioClip clip;
 
+    public cameraMouseMovement lockLooking;
+    public KeyboardMovement lockKeyboard;
+
     // Start is called before the first frame update
     void Start()
     {
         names = new Queue<string>();
         sentences = new Queue<string>();
+        lockLooking = FindObjectOfType<cameraMouseMovement>();
+        lockKeyboard = FindObjectOfType<KeyboardMovement>();
     }
 
     // START DIALOGUE
     public void StartDialogue(Dialogue dialogue)
     {
+        
+        //var lockMouse = 
+        lockLooking.dialogue = false;
+        lockKeyboard.dialogue = false;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         conversation.SetBool("IsOpen", true);
         Debug.Log("Starting conversation with " + dialogue.names[0]);
 
@@ -92,6 +103,10 @@ public class DialogueManager : MonoBehaviour
     // END DIALOGUE
     void EndDialogue()
     {
+        lockLooking.dialogue = true;
+        lockKeyboard.dialogue = true;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         conversation.SetBool("IsOpen", false);
         Debug.Log("End of conversation.");
     }

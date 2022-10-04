@@ -17,6 +17,7 @@ public class KeyboardMovement : MonoBehaviour
     public LayerMask groundMask;
 
     bool grounded;
+    public bool dialogue = true;
 
     Vector3 v;
 
@@ -31,15 +32,19 @@ public class KeyboardMovement : MonoBehaviour
             v.y = -1f;
         }
 
-        x = Input.GetAxis("Horizontal");
-        z = Input.GetAxis("Vertical");
-        Vector3 move = transform.right * x + transform.forward * z;
+        if (dialogue == true)
+        {
+            x = Input.GetAxis("Horizontal");
+            z = Input.GetAxis("Vertical");
+            Vector3 move = transform.right * x + transform.forward * z;
 
-        controller.Move(move * speed * Time.deltaTime);
+            controller.Move(move * speed * Time.deltaTime);
 
-        v.y += g * Time.deltaTime;
+            v.y += g * Time.deltaTime;
 
-        controller.Move(v * Time.deltaTime);
+            controller.Move(v * Time.deltaTime);
+        }
+       
     }
 
     void FixedUpdate()

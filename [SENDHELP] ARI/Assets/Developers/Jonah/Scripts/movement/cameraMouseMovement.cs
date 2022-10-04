@@ -12,6 +12,7 @@ public class cameraMouseMovement : MonoBehaviour
     float mouseYAxis;
 
     public Camera cam;
+    public bool dialogue = true;
 
     void Start()
     {
@@ -24,14 +25,18 @@ public class cameraMouseMovement : MonoBehaviour
     void Update()
     {
         //KBM Controls
-        mouseXAxis = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        mouseYAxis = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        if (dialogue == true)
+        {
+            mouseXAxis = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+            mouseYAxis = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-        xRotation -= mouseYAxis;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+            xRotation -= mouseYAxis;
+            xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+            transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
 
-        player.Rotate(Vector3.up * mouseXAxis);
+            player.Rotate(Vector3.up * mouseXAxis);
+        }
+        
     }
 }

@@ -87816,6 +87816,8 @@ MonoBehaviour:
   conversation: {fileID: 232283209}
   source: {fileID: 1837680142}
   clip: {fileID: 8300000, guid: 881e3f52c86c94f26a60718d35627cd8, type: 3}
+  lockLooking: {fileID: 0}
+  lockKeyboard: {fileID: 0}
 --- !u!4 &1500311272
 Transform:
   m_ObjectHideFlags: 0
@@ -97306,7 +97308,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1697737736}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.489, y: 0.556, z: -6.85}
+  m_LocalPosition: {x: 11.188, y: 1.014, z: -7.097}
   m_LocalScale: {x: 0.489081, y: 0.489081, z: 0.489081}
   m_Children: []
   m_Father: {fileID: 1726182554}
@@ -114407,7 +114409,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2041454522}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9dbae0e9cf1c339469dc58d93663a837, type: 3}
   m_Name: 
@@ -121828,10 +121830,7 @@ MonoBehaviour:
   cam: {fileID: 1252864584}
   source: {fileID: 0}
   clip: {fileID: 0}
-  terminal: {fileID: 0}
   notepadCollider: {fileID: 2041454523}
-  dialogueAnimation:
-  - {fileID: 288320043}
   SceneToLoad: PasswordTerminal
   delayTime: 3
   levelDone: 3
