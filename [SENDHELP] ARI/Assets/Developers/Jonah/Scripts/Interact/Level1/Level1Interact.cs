@@ -28,14 +28,20 @@ public class Level1Interact : MonoBehaviour
     public AudioSource terminalSource;
     public AudioClip terminalClip;
     public Collider terminalCollider;
+    public bool dialogueOver = false;
 
-    
+    public Collider startsignCollider;
+    public Collider swipeCollider;
 
 
 
     void Start()
     {
         cameraPrivate = GetComponent<Level1Interact>().cam;
+        var startDialogue = GetComponent<Level1Dialogue>().startDialogue;
+        var startTrigger = FindObjectOfType<DialogueTrigger>();
+        startTrigger.dialogue = startDialogue;
+        startTrigger.TriggerDialogue();
         padRead = false;
     }
 
@@ -43,6 +49,8 @@ public class Level1Interact : MonoBehaviour
     void Update()
     {
         notepadCollider.enabled = true;
+        startsignCollider.enabled = true;
+        swipeCollider.enabled = true;
         UpdateUIDisappear();
 
         //Creates an array at the center of the player camera
@@ -73,12 +81,48 @@ public class Level1Interact : MonoBehaviour
                 {
                     padRead = true;
                     terminalCollider.enabled = true;
-                    var dialogueTrigger = FindObjectOfType<DialogueTrigger>();
-                    dialogueTrigger.TriggerDialogue();                 
+                    var greenhousepadDialogue = GetComponent<Level1Dialogue>().greenhouseNotepad;
+                    var greenhousepadTrigger = FindObjectOfType<DialogueTrigger>();
+                    greenhousepadTrigger.dialogue = greenhousepadDialogue;
+                    greenhousepadTrigger.TriggerDialogue();
                 }
 
-                if (hitInfo.collider.CompareTag("Terminal Node") && padRead == true)
+                if (hitInfo.collider.CompareTag("GreenhouseDialogue"))
                 {
+                    var greenhouseDialogue = GetComponent<Level1Dialogue>().greenhouseDialogue;
+                    var greenhouseTrigger = FindObjectOfType<DialogueTrigger>();
+                    greenhouseTrigger.dialogue = greenhouseDialogue;
+                    greenhouseTrigger.TriggerDialogue();
+                }
+
+                if (hitInfo.collider.CompareTag("Start Sign"))
+                {
+                    var signDialogue = GetComponent<Level1Dialogue>().signDialogue;
+                    var signTrigger = FindObjectOfType<DialogueTrigger>();
+                    signTrigger.dialogue = signDialogue;
+                    signTrigger.TriggerDialogue();
+                }
+
+                if (hitInfo.collider.CompareTag("Swipe Access"))
+                {
+                    var swipeDialogue = GetComponent<Level1Dialogue>().swipeDialogue;
+                    var swipeTrigger = FindObjectOfType<DialogueTrigger>();
+                    swipeTrigger.dialogue = swipeDialogue;
+                    swipeTrigger.TriggerDialogue();
+                }
+
+                if (hitInfo.collider.CompareTag("Terminal Node") && padRead == true && dialogueOver == false)
+                {
+                    
+                    var terminalDialogue = GetComponent<Level1Dialogue>().terminalDialogue;
+                    var terminalTrigger = FindObjectOfType<DialogueTrigger>();
+                    terminalTrigger.dialogue = terminalDialogue;
+                    terminalTrigger.TriggerDialogue();
+                    dialogueOver = true;
+                }
+                else if (hitInfo.collider.CompareTag("Terminal Node") && padRead == true && dialogueOver == true)
+                {
+
                     LevelSelection.levelListDone.Add(levelDone);
                     terminalSource.PlayOneShot(terminalClip, 7f);
                     anim.SetBool("MinigameWon", true);

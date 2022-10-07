@@ -14024,6 +14024,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5, z: 0.5}
   m_Center: {x: 0, y: 0.25, z: 0}
+--- !u!114 &207586357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 207586353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ad5866855b80a743b4479ca855bb793, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &208180375
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33074,6 +33086,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dbae0e9cf1c339469dc58d93663a837, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &697499421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697499419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1984647c4df99704c968009a854a490c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &697499422
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -40084,7 +40108,7 @@ MonoBehaviour:
       standing hooked into that terminal for so long.
     - Woah, where do all these doors lead?
     - THIS MINING FACILITY HOUSES MANY UTILITIES VITAL TO OUR PRODUCTION AND OPERATIONS.
-      YOU ARE CURRENTLY ON ROUTE TO THE CENTER OF THIS STATION.
+      YOU ARE CURRENTLY ON ROUTE TO THE CENTER OF THIS  STATION.
     - "LOCATED IN THE CENTER OF THIS STATION, ON YOUR LEFT IS ACCESS TO THE ENVIRONMENT,
       GRAVITY, AND WATER CONTROL CENTERS. TO YOUR RIGHT IS THE COMMUNICATIONS, SECURITY,
       AND DEEP SPACE TRANSMISSIONS CENTERS. DIRECTLY IN FRONT OF YOU ARE THE AIRLOCKS
@@ -69285,8 +69309,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1298583157}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.209, y: 0.644, z: 1.492}
-  m_LocalScale: {x: 1.1166931, y: 1.1166931, z: 1.1166931}
+  m_LocalPosition: {x: 0.209, y: 0.644, z: 1.548}
+  m_LocalScale: {x: 2.7, y: 1.1166931, z: 1.1166931}
   m_Children: []
   m_Father: {fileID: 1726182554}
   m_RootOrder: 0
@@ -81741,7 +81765,8 @@ GameObject:
   - component: {fileID: 1465172103}
   - component: {fileID: 1465172102}
   - component: {fileID: 1465172101}
-  m_Layer: 0
+  - component: {fileID: 1465172104}
+  m_Layer: 15
   m_Name: Greenhouse Dialogue
   m_TagString: GreenhouseDialogue
   m_Icon: {fileID: 0}
@@ -81756,8 +81781,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1465172099}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.174, y: 0.576, z: -6.26}
-  m_LocalScale: {x: 0.8841977, y: 0.8841977, z: 0.8841977}
+  m_LocalPosition: {x: 14.207, y: 0.576, z: -8.489}
+  m_LocalScale: {x: 1.93, y: 0.8841977, z: 0.8841977}
   m_Children: []
   m_Father: {fileID: 1726182554}
   m_RootOrder: 2
@@ -81824,6 +81849,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1465172099}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1465172104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1465172099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d176808599e54ba4486bd6e59c5692ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1465615693
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -108435,8 +108472,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1999033677}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.405, y: 0.686, z: 0.646}
-  m_LocalScale: {x: 1.1166931, y: 1.1166931, z: 1.1166931}
+  m_LocalPosition: {x: 4.63, y: 1.317, z: -0.458}
+  m_LocalScale: {x: 2.29, y: 1.1166931, z: 1.1166931}
   m_Children: []
   m_Father: {fileID: 1726182554}
   m_RootOrder: 1
@@ -120985,6 +121022,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 1888296233316019554, guid: 62c2d2863cc91ae4c969b5dfbaba465c, type: 3}
+      propertyPath: m_TagString
+      value: Start Sign
+      objectReference: {fileID: 0}
     - target: {fileID: 1888296233316019564, guid: 62c2d2863cc91ae4c969b5dfbaba465c, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -121341,9 +121382,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1888296233243989675, guid: 62c2d2863cc91ae4c969b5dfbaba465c, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1888296233316019554, guid: 62c2d2863cc91ae4c969b5dfbaba465c, type: 3}
       propertyPath: m_Name
       value: Server Room Swipe Access Node
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888296233316019554, guid: 62c2d2863cc91ae4c969b5dfbaba465c, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888296233316019554, guid: 62c2d2863cc91ae4c969b5dfbaba465c, type: 3}
+      propertyPath: m_TagString
+      value: Swipe Access
       objectReference: {fileID: 0}
     - target: {fileID: 1888296233316019564, guid: 62c2d2863cc91ae4c969b5dfbaba465c, type: 3}
       propertyPath: m_RootOrder
@@ -121838,3 +121891,118 @@ MonoBehaviour:
   terminalSource: {fileID: 1837680142}
   terminalClip: {fileID: 8300000, guid: 078a6a7800affd94aad4531c5453c66c, type: 3}
   terminalCollider: {fileID: 717708811}
+  startsignCollider: {fileID: 697499422}
+  swipeCollider: {fileID: 207586356}
+--- !u!114 &7190851603241998712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7190851603241998710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 246be140d27dfad4888d3ef1e52aacec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startDialogue:
+    names:
+    - STATION AI
+    - ARI
+    - ARI
+    - STATION AI
+    - "STATION ARI\t"
+    - STATION ARI
+    - ARI
+    - STATION AI
+    - ARI
+    - STATION AI
+    - ARI
+    - STATION AI
+    - ARI
+    - ARI
+    sentences:
+    - LOCAL SECURITY CHECK CLEARED, OPENING DOOR.
+    - That took an unnecessarily long time to get through... ugh my back aches from
+      standing hooked into that terminal for so long.
+    - Woah, where do all these doors lead?
+    - THIS MINING FACILITY HOUSES MANY UTILITIES VITAL TO OUR PRODUCTION AND OPERATIONS.
+      YOU ARE CURRENTLY ON ROUTE TO THE CENTER OF THIS STATION
+    - 'LOCATED IN THE CENTER OF THIS STATION, ON YOUR LEFT IS ACCESS TO THE ENVIRONMENT,
+      GRAVITY, AND WATER CONTROL CENTERS. TO YOUR RIGHT IS THE COMMUNICATIONS, SECURITY,
+      AND DEEP SPACE TRANSMISSIONS CENTERS. DIRECTLY IN FRONT OF YOU ARE THE AIRLOCKS
+      TO THE CARGO BAY, HANGAR, AND ENGINEERING. '
+    - IT TRULY IS THE HUB OF ALL OPERATIONS. WHERE YOU WILL FIND THE COMMUNICATIONS
+      CENTER IS ALSO, IN THE CENTER OF THIS STATION.
+    - Big place...
+    - "WARNING, THE FOLLOWING CENTERS ARE OFFLINE : ENVIRONMENTAL, GRAVITY, WATER
+      PRODUCTION, COMMUNICATIONS, DEEP SPACE TRANS\u2026"
+    - Ok, Ok! I think we get the point, where should I start?
+    - THE OPTIMAL STARTING AREA WOULD BE WHERE YOU ARE CURRENTLY LOCATED.
+    - "You don't say\u2026...there's a bunch of terminals with different colours,
+      are the colours meant to classify different systems?"
+    - YES THE ORANGE TERMINALS ARE YOUR PRIMARY TARGETS.
+    - Ok then orange  it is.
+    - Let's get to it!
+  greenhouseNotepad:
+    names:
+    - GOOD PASSWORD ?
+    - GOOD PASSWORD ?
+    - GOOD PASSWORD ?
+    - GOOD PASSWORD ?
+    sentences:
+    - Password!  BAD
+    - Admin21  NO
+    - "St@tion@i   NOPE\r"
+    - Skyw@!ker77  FINALLY
+  greenhouseDialogue:
+    names:
+    - A.R.I
+    - A.R.I
+    sentences:
+    - Ahhhh, the sweet fresh air provided by none other than beaUTifool plants.
+    - Thanks for the O2 my friends. I may not need it, but our crew certainly does.
+      You're the true heroes we don't deserve but need.
+  signDialogue:
+    names:
+    - STARTING SIGN
+    - ARI
+    sentences:
+    - It reads, "Welcome to Wing B4-Y0R TYM3".
+    - It's nice to know where you are. Though, with how large this facility is, I'm
+      not exactly sure where that is anyway.
+  swipeDialogue:
+    names:
+    - STATION AI
+    - STATION AI
+    - STATION AI
+    - STATION AI
+    sentences:
+    - SWIPE ACCESS DENIED. TRY TO FIND A TERMINAL TO GRANT ACCESS.
+    - LOCATING NEAREST TERMINAL FOR AUTHENTICATION.
+    - ...
+    - 'TERMINAL LOCATED: IN GREENHOUSE STUDY.'
+  terminalDialogue:
+    names:
+    - STATION AI
+    - STATION AI
+    - STATION AI
+    - ARI
+    - STATION AI
+    - ARI
+    - STATION AI
+    - ARI
+    sentences:
+    - THIS TERMINAL IS DIRECTLY LINKED TO THE SERVER ACCESS ROOM ACCESS POINT. I
+      BELIEVE IF WE CAN PERFORM THE TASK AT HAND THAT WE WILL BE ABLE TO GAIN ACCESS
+      TO THE NEXT ROOM AND MOVE FORWARD.
+    - ANALYZING...THIS TERMINAL CALLS FOR CREATIGN A NEW PASSWORD FOR SECURITY SYSTEM
+      OVERRIDE.
+    - PLEASE SELECT A NEW ADMINISTRATIVE PASSWORD.
+    - Well, 1234 should do no?
+    - PLEASE NOTE THE PASSWORD NEEDS TO BE ALPHANUMERIC WITH AT LEAST 1 CAPITAL LETTER
+      AND 1 SYMBOL.
+    - That just seems like a lot of extra work.
+    - "IT IS COMMON KNOWLEDGE THAT WHOEVER MAKES THEIR PASSWORD, \u2018PASSWORD\u2019
+      DOESN'T HAVE A PASSWORD AT ALL."
+    - Gee, that's a bit harsh but I get your point.

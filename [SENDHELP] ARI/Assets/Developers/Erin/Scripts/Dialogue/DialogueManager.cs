@@ -20,7 +20,6 @@ public class DialogueManager : MonoBehaviour
 
     public cameraMouseMovement lockLooking;
     public KeyboardMovement lockKeyboard;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -33,8 +32,7 @@ public class DialogueManager : MonoBehaviour
     // START DIALOGUE
     public void StartDialogue(Dialogue dialogue)
     {
-        
-        //var lockMouse = 
+
         lockLooking.dialogue = false;
         lockKeyboard.dialogue = false;
         Cursor.lockState = CursorLockMode.None;
