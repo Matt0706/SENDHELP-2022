@@ -47,6 +47,7 @@ TagManager:
   - Living Quarters Pad
   - Nav Room Pad
   - Nav Swipe Access
+  - Start Sign
   layers:
   - Default
   - TransparentFX
