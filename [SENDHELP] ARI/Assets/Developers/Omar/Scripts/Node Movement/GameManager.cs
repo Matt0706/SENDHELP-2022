@@ -42,5 +42,4 @@ public class GameManager : MonoBehaviour
             currentNode.GetComponent<Prop>().loc.Arrive();
         }
     }
-
 }

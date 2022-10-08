@@ -23,16 +23,21 @@ public class DialogueManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        names = new Queue<string>();
-        sentences = new Queue<string>();
-        lockLooking = FindObjectOfType<cameraMouseMovement>();
-        lockKeyboard = FindObjectOfType<KeyboardMovement>();
+        
+        /*names = new Queue<string>();
+        sentences = new Queue<string>();*/
+        /*lockLooking = FindObjectOfType<cameraMouseMovement>();
+        lockKeyboard = FindObjectOfType<KeyboardMovement>();*/
+        
     }
 
     // START DIALOGUE
     public void StartDialogue(Dialogue dialogue)
     {
-
+        names = new Queue<string>();
+        sentences = new Queue<string>();
+        lockLooking = FindObjectOfType<cameraMouseMovement>();
+        lockKeyboard = FindObjectOfType<KeyboardMovement>();
         lockLooking.dialogue = false;
         lockKeyboard.dialogue = false;
         Cursor.lockState = CursorLockMode.None;
@@ -40,13 +45,19 @@ public class DialogueManager : MonoBehaviour
         conversation.SetBool("IsOpen", true);
         Debug.Log("Starting conversation with " + dialogue.names[0]);
 
-        names.Clear();
-        sentences.Clear();
+        if (names != null && sentences != null)
+        {
+            names.Clear();
+            sentences.Clear();
+        }
+        
 
         foreach (string name in dialogue.names)
         {
             names.Enqueue(name);
+            Debug.LogWarning(name);
         }
+        
 
         foreach (string sentence in dialogue.sentences)
         {
@@ -103,8 +114,6 @@ public class DialogueManager : MonoBehaviour
     {
         lockLooking.dialogue = true;
         lockKeyboard.dialogue = true;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
         conversation.SetBool("IsOpen", false);
         Debug.Log("End of conversation.");
     }

@@ -35,7 +35,8 @@ public class Lvl1term2Interact : MonoBehaviour
 
     //Dialogue
     public Animator[] dialogueAnimation;
-
+    public Collider navCollider;
+    public bool dialogueOver = false;
 
     //Terminal Variables
     public string SceneToLoad;
@@ -53,7 +54,6 @@ public class Lvl1term2Interact : MonoBehaviour
     void Start()
     {
         cameraPrivate = GetComponent<Lvl1term2Interact>().cam;
-        //terminal.GetComponent<SceneChangeInteract>().enabled = false;
         padRead1 = false;
         padRead2 = false;
     }
@@ -64,6 +64,7 @@ public class Lvl1term2Interact : MonoBehaviour
         swipeCollider.enabled = true;
         notepad1Collider.enabled = true;
         notepad2Collider.enabled = true;
+        navCollider.enabled = true;
         UpdateUIDisappear();
 
         //Creates an array at the center of the player camera
@@ -90,11 +91,20 @@ public class Lvl1term2Interact : MonoBehaviour
                 Debug.LogWarning("E Was Pressed!");
 
                 //SwipeAccess 
-                if (hitInfo.collider.CompareTag("Swipe Access"))
+                if (hitInfo.collider.CompareTag("Swipe Access") && dialogueOver == false)
+                {
+                    var swipeDialogue = GetComponent<Lvl1Term2Dialogue>().swipeDialogue;
+                    var swipeTrigger = FindObjectOfType<DialogueTrigger>();
+                    swipeTrigger.dialogue = swipeDialogue;
+                    swipeTrigger.TriggerDialogue();
+                    dialogueOver = true;
+                }
+                else if (hitInfo.collider.CompareTag("Swipe Access") && dialogueOver == true)
                 {
                     swipeSource.PlayOneShot(swipeClip, 7f);
                     Debug.Log("Sound Played");
                     swipeAnim.SetBool("hasAccessKey", true);
+                    dialogueOver = false;
                 }
 
 
@@ -103,17 +113,64 @@ public class Lvl1term2Interact : MonoBehaviour
                 {
                     padRead1 = true;
                     terminalCollider.enabled = true;
+                    var storagepadDialogue = GetComponent<Lvl1Term2Dialogue>().storagepadDialogue;
+                    var storagepadTrigger = FindObjectOfType<DialogueTrigger>();
+                    storagepadTrigger.dialogue = storagepadDialogue;
+                    storagepadTrigger.TriggerDialogue();
                 }
 
                 if (hitInfo.collider.CompareTag("Living Quarters Pad"))
                 {
                     padRead2 = true;
                     terminalCollider.enabled = true;
+                    var livingpadDialogue = GetComponent<Lvl1Term2Dialogue>().livingpadDialogue;
+                    var livingpadTrigger = FindObjectOfType<DialogueTrigger>();
+                    livingpadTrigger.dialogue = livingpadDialogue;
+                    livingpadTrigger.TriggerDialogue();
                 }
 
+                if (hitInfo.collider.CompareTag("StorageSignDialogue"))
+                {
+                    var signDialogue = GetComponent<Lvl1Term2Dialogue>().storageDialogue;
+                    var storageTrigger = FindObjectOfType<DialogueTrigger>();
+                    storageTrigger.dialogue = signDialogue;
+                    storageTrigger.TriggerDialogue();
+                }
+
+                if (hitInfo.collider.CompareTag("TorpedosDialogue"))
+                {
+                    var torpedosDialogue = GetComponent<Lvl1Term2Dialogue>().torpedosDialogue;
+                    var torpedosTrigger = FindObjectOfType<DialogueTrigger>();
+                    torpedosTrigger.dialogue = torpedosDialogue;
+                    torpedosTrigger.TriggerDialogue();
+                }
+
+                if (hitInfo.collider.CompareTag("DeskDialogue"))
+                {
+                    var deskDialogue = GetComponent<Lvl1Term2Dialogue>().deskDialogue;
+                    var deskTrigger = FindObjectOfType<DialogueTrigger>();
+                    deskTrigger.dialogue = deskDialogue;
+                    deskTrigger.TriggerDialogue();
+                }
+
+                if (hitInfo.collider.CompareTag("Access Node"))
+                {
+                    var navDialogue = GetComponent<Lvl1Term2Dialogue>().navSwipeDialogue;
+                    var navTrigger = FindObjectOfType<DialogueTrigger>();
+                    navTrigger.dialogue = navDialogue;
+                    navTrigger.TriggerDialogue();
+                }
 
                 //Terminal
-                if (hitInfo.collider.CompareTag("SaveNode") && padRead1 == true && padRead2 == true)
+                if (hitInfo.collider.CompareTag("SaveNode") && padRead1 == true && padRead2 == true && dialogueOver == false)
+                {
+                    var terminalDialogue = GetComponent<Lvl1Term2Dialogue>().terminalDialogue;
+                    var terminalTrigger = FindObjectOfType<DialogueTrigger>();
+                    terminalTrigger.dialogue = terminalDialogue;
+                    terminalTrigger.TriggerDialogue();
+                    dialogueOver = true;
+                }
+                else if (hitInfo.collider.CompareTag("SaveNode") && padRead1 == true && padRead2 == true && dialogueOver == true)
                 {
                     LevelSelection.levelListDone.Add(levelDone);
                     terminalSource.PlayOneShot(terminalClip, 7f);

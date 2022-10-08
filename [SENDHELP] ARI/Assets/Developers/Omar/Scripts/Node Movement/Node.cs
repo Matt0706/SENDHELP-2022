@@ -39,37 +39,36 @@ public abstract class Node : MonoBehaviour
         if (GameManager.ins.currentNode != null)
         {
             GameManager.ins.currentNode.Leave();
-        }
-        // set current node
-        GameManager.ins.currentNode = this;
 
-        // move camera
-        
-       // GameManager.ins.rig.AlignTo(cameraPosition);
+            // set current node
+            GameManager.ins.currentNode = this;
 
+            // move camera
 
+            // GameManager.ins.rig.AlignTo(cameraPosition);
 
 
-        //Old camera movement. only uncomment for testing without DOTween functions!
-        //Camera.main.transform.position = cameraPosition.position;
-        //Camera.main.transform.rotation = cameraPosition.rotation;
 
 
-        // turn off collider 
-        if (col != null)
-        {
-            col.enabled = false;
-        }
-         // turn on all reachable node's colliders
-        foreach (Node node in reachableNodes)
-        {
-            if (node.col != null)
+            //Old camera movement. only uncomment for testing without DOTween functions!
+            //Camera.main.transform.position = cameraPosition.position;
+            //Camera.main.transform.rotation = cameraPosition.rotation;
+
+
+            // turn off collider 
+            if (col != null)
             {
-                node.col.enabled = true;
+                col.enabled = false;
+            }
+            // turn on all reachable node's colliders
+            foreach (Node node in reachableNodes)
+            {
+                if (node.col != null)
+                {
+                    node.col.enabled = true;
+                }
             }
         }
-
-
     }
 
     public virtual void Leave()
