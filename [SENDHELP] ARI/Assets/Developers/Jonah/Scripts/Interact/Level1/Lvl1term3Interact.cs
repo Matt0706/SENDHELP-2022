@@ -38,6 +38,8 @@ public class Lvl1term3Interact : MonoBehaviour
     //Dialogue
     public Animator[] dialogueAnimation;
 
+    bool dialogueOver = false;
+
 
     void Start()
     {
@@ -76,31 +78,69 @@ public class Lvl1term3Interact : MonoBehaviour
                 Debug.LogWarning("E Was Pressed!");
 
                 //SwipeAccess 
-                if (hitInfo.collider.CompareTag("Nav Swipe Access"))
+                if (hitInfo.collider.CompareTag("Nav Swipe Access") && dialogueOver == false)
+                {
+                    var swipeDialogue = GetComponent<Lvl1Term3Dialogue>().navaccessDialogue;
+                    var swipeTrigger = FindObjectOfType<DialogueTrigger>();
+                    swipeTrigger.dialogue = swipeDialogue;
+                    swipeTrigger.TriggerDialogue();
+                    dialogueOver = true;
+                }
+                else if (hitInfo.collider.CompareTag("Nav Swipe Access") && dialogueOver == true)
                 {
                     swipeSource.PlayOneShot(exitswipeClip, 7f);
                     Debug.Log("Sound Played");
                     swipeAnim.SetBool("hasAccessKey", true);
+                    dialogueOver = false;
                 }
 
 
                 //Server Notepad
                 if (hitInfo.collider.CompareTag("Nav Room Pad"))
                 {
+                    var notepadDialogue = GetComponent<Lvl1Term3Dialogue>().navNotepad;
+                    var notepadTrigger = FindObjectOfType<DialogueTrigger>();
+                    notepadTrigger.dialogue = notepadDialogue;
+                    notepadTrigger.TriggerDialogue();
                     padRead1 = true;
                     exitswipeCollider.enabled = true;
                 }
 
-                
+
 
 
                 //Terminal
-                if (hitInfo.collider.CompareTag("Swipe Access") && padRead1 == true)
+                if (hitInfo.collider.CompareTag("Swipe Access") && padRead1 == true && dialogueOver == false)
+                {
+                    var swipeDialogue = GetComponent<Lvl1Term3Dialogue>().swipeDialogue;
+                    var swipeTrigger = FindObjectOfType<DialogueTrigger>();
+                    swipeTrigger.dialogue = swipeDialogue;
+                    swipeTrigger.TriggerDialogue();
+                    dialogueOver = true;
+                }
+                else if (hitInfo.collider.CompareTag("Swipe Access") && padRead1 == true && dialogueOver == true)
                 {
                     LevelSelection.levelListDone.Add(levelDone);
                     exitswipeSource.PlayOneShot(exitswipeClip, 7f);
                     exitswipeAnim.SetBool("MinigameWon", true);
                     Invoke("DelayedAction", delayTime);
+                    dialogueOver = false;
+                }
+
+                if (hitInfo.collider.CompareTag("ComputerDeskDialogue"))
+                {
+                    var deskDialogue = GetComponent<Lvl1Term3Dialogue>().deskDialogue;
+                    var deskTrigger = FindObjectOfType<DialogueTrigger>();
+                    deskTrigger.dialogue = deskDialogue;
+                    deskTrigger.TriggerDialogue();
+                }
+
+                if (hitInfo.collider.CompareTag("VendingMachineDialogue"))
+                {
+                    var vendingDialogue = GetComponent<Lvl1Term3Dialogue>().vendingDialogue;
+                    var vendingTrigger = FindObjectOfType<DialogueTrigger>();
+                    vendingTrigger.dialogue = vendingDialogue;
+                    vendingTrigger.TriggerDialogue();
                 }
             }
         }

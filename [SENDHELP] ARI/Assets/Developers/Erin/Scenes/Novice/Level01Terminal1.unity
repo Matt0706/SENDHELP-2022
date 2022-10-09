@@ -7610,7 +7610,8 @@ GameObject:
   - component: {fileID: 97426213}
   - component: {fileID: 97426212}
   - component: {fileID: 97426211}
-  m_Layer: 0
+  - component: {fileID: 97426214}
+  m_Layer: 15
   m_Name: Sever Room Terminal Dialogue - Not Working 1
   m_TagString: ServerRoomTerminalNWDialogue
   m_Icon: {fileID: 0}
@@ -7625,7 +7626,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 97426209}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 32.354, y: 0.686, z: 2.02}
+  m_LocalPosition: {x: 33.289, y: 1.495, z: 1.957}
   m_LocalScale: {x: 1.1166931, y: 1.1166931, z: 1.1166931}
   m_Children: []
   m_Father: {fileID: 1726182554}
@@ -7642,7 +7643,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.74
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &97426212
 MeshRenderer:
@@ -7693,6 +7694,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 97426209}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &97426214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97426209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e16e89f21330fde4abf784a22ba03cf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &99400738
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9640,6 +9653,64 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 539745478100655087, guid: bd6ee82c5e06b3f4f86113cbf8261ae1, type: 3}
   m_PrefabInstance: {fileID: 126209257}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &126209260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126209258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 568ecb2e86c575b4b8e92ac658b83f63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startDialogue:
+    names:
+    - STATION AI
+    sentences:
+    - GREENHOUSE TERMINAL HAS BEEN SUCCESSFULLY BYPASSED. YOU MAY NOT PROCEED TO
+      THE NEXT ROOM.
+  serverNotepad:
+    names:
+    - 'CIPHERS?!?! '
+    - 'CIPHERS?!?! '
+    - 'CIPHERS?!?! '
+    - 'CIPHERS?!?! '
+    sentences:
+    - "Key is the number the letters are shifted\r"
+    - "Caesar: D=G, E=H, F=I \u2026 ?\r\n"
+    - "ROT13: J=W, K=X, L=Y \u2026 ?\r\n"
+    - ROT13 - why 13?
+  terminalNWDialogue:
+    names:
+    - STATION AI
+    sentences:
+    - THIS TERMINAL IS NON-OPERATIONAL. PLEASE FIND ANOTHER TERMINAL TO INTERFACE
+      WITH.
+  xhallSwipeDialogue:
+    names:
+    - STATION AI
+    - STATION AI
+    - STATION AI
+    - STATION AI
+    sentences:
+    - SWIPE ACCESS DENIED. TRY TO FIND A TERMINAL TO GRANT ACCESS
+    - LOCATING NEAREST TERMINAL FOR AUTHENTICATION.
+    - ...
+    - 'TERMINAL LOCATED: IN SERVER ROOM - TERMINAL 03 IS OPERATIONAL.'
+  swipeDialogue:
+    names:
+    - STATION AI
+    sentences:
+    - SWIPE ACCESS GRANTED.
+  terminalDialogue:
+    names:
+    - STATION AI
+    sentences:
+    - THIS TERMINAL IS DIRECTLY LINKED TO THE SERVER ACCESS ROOM ACCESS POINT AT
+      THE LEFT CORRIDOR. I BELIEVE IF WE CAN PERFORM THE TASK AT HAND THAT WE WILL
+      BE ABLE TO GAIN ACCESS TO THE NEXT ROOM AND MOVE FORWARD.
 --- !u!114 &126209263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9711,6 +9782,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 16384
+  dialogue: 1
 --- !u!114 &126209266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9733,6 +9805,7 @@ MonoBehaviour:
   swipeClip: {fileID: 8300000, guid: 0c008ee3ee72a4362a35be25fa5de043, type: 3}
   swipeAnim: {fileID: 167622596}
   swipeCollider: {fileID: 207586356}
+  xHallCollider: {fileID: 983779926}
   noteSource: {fileID: 0}
   noteClip: {fileID: 0}
   notepadCollider: {fileID: 107445630}
@@ -55550,6 +55623,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5, z: 0.5}
   m_Center: {x: 0, y: 0.25, z: 0}
+--- !u!114 &983779927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983779923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0bd7f24cb1ae804c96f143184052747, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &991429473
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66015,7 +66100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSensitivity: 400
   player: {fileID: 126209259}
-  cam: {fileID: 1252864584}
+  dialogue: 1
 --- !u!1 &1252927548
 GameObject:
   m_ObjectHideFlags: 0
@@ -78115,9 +78200,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1888296233243989675, guid: 62c2d2863cc91ae4c969b5dfbaba465c, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1888296233316019554, guid: 62c2d2863cc91ae4c969b5dfbaba465c, type: 3}
       propertyPath: m_Name
       value: X Hall Swipe Access Node
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888296233316019554, guid: 62c2d2863cc91ae4c969b5dfbaba465c, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888296233316019554, guid: 62c2d2863cc91ae4c969b5dfbaba465c, type: 3}
+      propertyPath: m_TagString
+      value: ServerRoomAccessDialogue
       objectReference: {fileID: 0}
     - target: {fileID: 1888296233316019564, guid: 62c2d2863cc91ae4c969b5dfbaba465c, type: 3}
       propertyPath: m_RootOrder
@@ -95924,6 +96021,8 @@ MonoBehaviour:
   conversation: {fileID: 232283209}
   source: {fileID: 921886965}
   clip: {fileID: 8300000, guid: 881e3f52c86c94f26a60718d35627cd8, type: 3}
+  lockLooking: {fileID: 0}
+  lockKeyboard: {fileID: 0}
 --- !u!4 &1500311272
 Transform:
   m_ObjectHideFlags: 0
@@ -111659,7 +111758,8 @@ GameObject:
   - component: {fileID: 1971957451}
   - component: {fileID: 1971957450}
   - component: {fileID: 1971957449}
-  m_Layer: 0
+  - component: {fileID: 1971957452}
+  m_Layer: 15
   m_Name: Sever Room Terminal Dialogue - Not Working 2
   m_TagString: ServerRoomTerminalNWDialogue
   m_Icon: {fileID: 0}
@@ -111674,7 +111774,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1971957447}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 32.354, y: 0.686, z: 3.828}
+  m_LocalPosition: {x: 33.252, y: 1.373, z: 4.097}
   m_LocalScale: {x: 1.1166931, y: 1.1166931, z: 1.1166931}
   m_Children: []
   m_Father: {fileID: 1726182554}
@@ -111691,7 +111791,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.8
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1971957450
 MeshRenderer:
@@ -111742,6 +111842,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1971957447}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1971957452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971957447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e16e89f21330fde4abf784a22ba03cf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1977233427 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7737259515347223966, guid: 2df01c394d528d142b71614633789a12, type: 3}
@@ -123141,7 +123253,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2041598049}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.163, y: 0.686, z: -5.551}
+  m_LocalPosition: {x: 9.163, y: 0.686, z: -6.519}
   m_LocalScale: {x: 1.1166931, y: 1.1166931, z: 1.1166931}
   m_Children: []
   m_Father: {fileID: 1726182554}

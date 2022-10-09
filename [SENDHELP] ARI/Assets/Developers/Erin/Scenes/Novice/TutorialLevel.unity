@@ -745,17 +745,165 @@ MonoBehaviour:
   m_GameObject: {fileID: 125167127}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eacd48c180c46324088a5e62d591ed37, type: 3}
+  m_Script: {fileID: 11500000, guid: 06df665523a7beb4eb883948f5baa914, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  XSensitivity: 3
-  YSensitivity: 3
-  clampVerticalRotation: 1
-  MinimumX: -90
-  MaximumX: 90
-  smooth: 0
-  smoothTime: 5
-  lockCursor: 0
+  startDialogue:
+    names:
+    - STATION AI
+    - STATION AI
+    - STATION AI
+    - STATION AI
+    - STATION AI
+    - A.R.I.
+    - A.R.I.
+    - STATION AI
+    - STATION AI
+    - STATION AI
+    - STATION AI
+    sentences:
+    - ...
+    - Booting...Initializing... A. R. I.
+    - ...LAUNCHING ARI BIOS STAND BY FOR BOOT...3...2...1...SUCCESS
+    - ...
+    - //ERROR. MODEL NUMBER UNKNOWN. //PRIMARY UTILITY DIRECTIVE SEQUENCE INITIALIZING...
+    - ...
+    - ...Huh?
+    - 'WELCOME TO MINING STATION 01487 HOUSED IN SECTOR 2285A OF THE SOLAR SYSTEM. '
+    - PLEASE FAMILIARIZE YOURSELF WITH YOUR MOTOR FUNCTIONS TO FULLY CALIBRATE YOUR
+      UNIT.
+    - TO OBSERVE AND FOCUS ON OBJECTS OF INTEREST OR TO MOVE TO A DIFFERENT PART
+      OF THE ROOM, CLICK WITH YOUR LMB (LEFT MOUSE BUTTON). TO RETURN TO YOUR PREVIOUS
+      STATE, USE RMB (RIGHT MOUSE BUTTON).
+    - 'MISSION: ACCLIMATE YOURSELF TO YOUR SURROUNDINGS.'
+  chipDialogue:
+    names:
+    - A.R.I
+    - USB CHIP
+    - A.R.I.
+    - STATION AI
+    - A.R.I.
+    sentences:
+    - Hm? What's this USB Chip?
+    - 'The flat floppy disk shaped USB chip looks relatively new. On the front of
+      it, it has a poorly scratched on text labelling the item as: "DOOR CODE" On
+      the back, It has a bright pink sticky note stuck it with large printed text
+      saying, "WARNING, DO NOT PLUG IN"'
+    - This looks ominous...but I can't help but think that maybe...it could be the
+      access terminal code stick for the next room.
+    - THE CHIP'S ORIGINA IS UNKNOWN, THIS WOULD NOT BE AN ADVISABLE MOVE. INSTEAD,
+      PLEASE INTERFACE WITH THE TERMINAL, AND LEAVE IT ALONE.
+    - Hmm...well there's no harm in trying it out though right? Maybe it'll save
+      us some time.
+  windowDialogue:
+    names:
+    - A.R.I.
+    - STATION AI
+    - CREATOR
+    - CREATOR
+    - CREATOR
+    - CREATOR
+    - CREATOR
+    - CREATOR
+    - CREATOR
+    - CREATOR
+    - A.R.I.
+    - A.R.I.
+    - STATION AI
+    sentences:
+    - Thats one big blue ball.
+    - 'RECEIVING TRANSMISSION FROM-- \\ERROR: SENDER UNKNOWN. --\\ERROR: SENDER LOCATION
+      UNKNOWN.'
+    - 'He-Hello? Is this thing on? '
+    - 'ARI listen, this is a recorded transmission so I wont be able to answer any
+      of your questions but I need your help. My ship has been damaged by-- KzZZtTt... '
+    - KKKkkRRRssT --and I am actively losing fuel and oxygen, I have managed to reactivate
+      my ... KKKKzzzrrrZzzTttt...
+    - ' KKrrvvt... --and as of now my thrusters and warp functions are operational.
+      The issue is my --KKkzzztt....'
+    - '--is completely borked, I need you to send a direct ping to my ships. '
+    - "I sent the address with this message and it should be coming on your screen
+      now. \r\n\n\\\\ COORDINATES RECIEVED: 1038403840298430398430384503840302"
+    - I need you to get the stations broadcasting range to be able to reach-- KKKzzzvvttss...
+      Kkzzt..
+    - "I am not sure how much time I have left so please hurry! \n\n\\\\ END OF TRANSMISSION."
+    - Oof...Someone's not having a good time...
+    - Time to go to work I guess!
+    - '\\ NEW DIRECTIVE: PLEASE INTERFACE WITH THE TERMINAL TO RECEIVE A DEMONSTRATION
+      IN THIS STATIONS UTILITY SOFTWARE.'
+  terminalDialogue:
+    names:
+    - STATION AI
+    - A.R.I.
+    - STATION AI
+    - A.R.I.
+    - STATION AI
+    - A.R.I.
+    - A.R.I.
+    sentences:
+    - PLEASE INTERFACE WITH THE TERMINAL. IT WILL TAKE A BIT TO GAIN ACCESS TO THE
+      NEXT AREA, PLEASE BE PATIENT.
+    - Hmm..Say, how long will I need to be hooked into that thing? It seriously strains
+      my joints just to stand there for hours and gives this awful buzz in my right
+      temple.
+    - TOTAL ESTIMATE OF TIME TO GAIN ACCESS TO MAIN WING SECTOR-B4 IS ABOUT 45 MINUTES.
+    - Aughhhh, that's so LONG! I don't have the time to be sitting around here, you
+      heard the creator, time is ticking and we need to move fast!
+    - TO INTERFACE WITH THE TERMINAL IS THE MOST RELIABLE AND KNOWN WAY TO GAIN ACCESS
+      TO LOCKED WINGS. PLEASE ATTACH THE INTERFACE CABLE TO YOUR RIGHT TEMPLE TO
+      PROCEED WITH PROGRAM.
+    - No, hold on just a moment. There has to be another way to get through faster.
+      No repair droid would want to sit here for 45 minutes every day just to get
+      to the main lobby!
+    - I'm going to search around some more. There's most likely some type of override
+      or crafty cheatcode to pry this entrance open.
+  plantDialogue:
+    names:
+    - A.R.I
+    - A.R.I
+    - A.R.I
+    - A.R.I
+    sentences:
+    - Ahhh beaUtooful plants.
+    - You are the heroes we don't deserve but need.
+    - At least, for some workers... you're always hard at work making O2.
+    - Keep at it soldier.
+  vendingDialogue:
+    names:
+    - A.R.I
+    - A.R.I
+    - A.R.I
+    - A.R.I
+    - A.R.I
+    sentences:
+    - Ahhh the state of the art product that takes our mining facility by storm!
+    - In need of sustinance? Perhaps liquis to satiate your taste buds?
+    - Look no further to the wonderful vending mahine! For a small cut of your salary,
+      you can get any unhealthy snack your heart desires!
+    - ...
+    - I don't even need to eat any of this stuff.
+  boardDialogue:
+    names:
+    - A.R.I
+    - A.R.I
+    - A.R.I
+    sentences:
+    - You would think with all the funding our company gets that we'd be using big
+      touch screen monitors for our presentations...
+    - Instead they give us blackboards...
+    - Eh, maybe they like the novelty of it all. It's fun to play with chalk anyway.
+  artDialogue:
+    names:
+    - A.R.I
+    - A.R.I
+    - A.R.I
+    - A.R.I
+    sentences:
+    - So this must be where all our funding goes into...
+    - Expensive pieces of modern art that nobody else can discern the ture meaning
+      of.
+    - ...
+    - Neat.
 --- !u!114 &125167130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -776,6 +924,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 16384
+  dialogue: 1
 --- !u!114 &125167131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -805,21 +954,6 @@ MonoBehaviour:
   terminalSource: {fileID: 1490930400}
   terminalClip: {fileID: 8300000, guid: 078a6a7800affd94aad4531c5453c66c, type: 3}
   terminalCollider: {fileID: 1181156863}
---- !u!114 &125167132
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 125167127}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c90e9d86122e64ba599a323568949f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  yAxis: {fileID: 853335777}
-  xAxis: {fileID: 813631956}
-  moveTime: 0
 --- !u!114 &125167134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -983,7 +1117,8 @@ GameObject:
   - component: {fileID: 143360135}
   - component: {fileID: 143360134}
   - component: {fileID: 143360133}
-  m_Layer: 0
+  - component: {fileID: 143360136}
+  m_Layer: 15
   m_Name: BlackBoard Dialogue
   m_TagString: BlackboardDialogue
   m_Icon: {fileID: 0}
@@ -998,7 +1133,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 143360131}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 22.765, y: 7.869, z: 6.059}
+  m_LocalPosition: {x: 23.056, y: 9.122, z: 3.255}
   m_LocalScale: {x: 0.66259605, y: 0.66259605, z: 0.66259605}
   m_Children: []
   m_Father: {fileID: 1878986876}
@@ -1015,7 +1150,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 2.42
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &143360134
 MeshRenderer:
@@ -1066,6 +1201,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 143360131}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &143360136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143360131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c36186eb26ed4fd47a0c3831748e35cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &145147160 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7737259515347223967, guid: 2df01c394d528d142b71614633789a12, type: 3}
@@ -2124,7 +2271,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 60c2f0e0aaa8f8d4e9d23d7e3768653b, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4757836856755875626, guid: bd6ee82c5e06b3f4f86113cbf8261ae1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bd6ee82c5e06b3f4f86113cbf8261ae1, type: 3}
 --- !u!1001 &334106838
 PrefabInstance:
@@ -3725,7 +3873,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.86
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &583345753
 MeshRenderer:
@@ -5912,9 +6060,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76cb722e3ab05514d9ca0e0029fe1b18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 150
+  mouseSensitivity: 400
   player: {fileID: 853335777}
-  cam: {fileID: 813631955}
+  dialogue: 1
 --- !u!1 &817213290
 GameObject:
   m_ObjectHideFlags: 0
@@ -6577,7 +6725,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingNode: {fileID: 373909894}
   currentNode: {fileID: 0}
-  rig: {fileID: 125167132}
+  rig: {fileID: 0}
 --- !u!4 &843325006
 Transform:
   m_ObjectHideFlags: 0
@@ -7342,8 +7490,9 @@ GameObject:
   - component: {fileID: 933075065}
   - component: {fileID: 933075068}
   - component: {fileID: 933075067}
+  - component: {fileID: 933075069}
   - component: {fileID: 933075066}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Plant Dialogue
   m_TagString: PlantDialogue
   m_Icon: {fileID: 0}
@@ -7358,7 +7507,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 933075064}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.515, y: 8.268, z: 8.886}
+  m_LocalPosition: {x: 9.015, y: 8.575, z: 9.88}
   m_LocalScale: {x: 0.66259605, y: 0.66259605, z: 0.66259605}
   m_Children: []
   m_Father: {fileID: 1878986876}
@@ -7375,7 +7524,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1.53
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &933075067
 MeshRenderer:
@@ -7426,6 +7575,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 933075064}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &933075069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933075064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43d76bbce44b08b4a8a8643ebbd0df1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &943200219 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 499840, guid: 9d79238e340446545b920b58f2cd9574, type: 3}
@@ -7993,7 +8154,8 @@ GameObject:
   - component: {fileID: 1017562764}
   - component: {fileID: 1017562763}
   - component: {fileID: 1017562762}
-  m_Layer: 0
+  - component: {fileID: 1017562761}
+  m_Layer: 15
   m_Name: Window Dialogue
   m_TagString: WindowDialogue
   m_Icon: {fileID: 0}
@@ -8008,12 +8170,24 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1017562759}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17.432737, y: 8.04, z: 7.236289}
+  m_LocalPosition: {x: 17.13, y: 8.775, z: 10.232}
   m_LocalScale: {x: 1.2461371, y: 1.2461371, z: 1.2461371}
   m_Children: []
   m_Father: {fileID: 1878986876}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1017562761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017562759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 741c9cb9c3523204b8c9ce25b8f5f339, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &1017562762
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8025,7 +8199,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1.61
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1017562763
 MeshRenderer:
@@ -8988,6 +9162,8 @@ MonoBehaviour:
   conversation: {fileID: 888606028}
   source: {fileID: 1490930400}
   clip: {fileID: 8300000, guid: 881e3f52c86c94f26a60718d35627cd8, type: 3}
+  lockLooking: {fileID: 0}
+  lockKeyboard: {fileID: 0}
 --- !u!4 &1142036825
 Transform:
   m_ObjectHideFlags: 0
@@ -10301,9 +10477,10 @@ GameObject:
   - component: {fileID: 1317846706}
   - component: {fileID: 1317846705}
   - component: {fileID: 1317846704}
-  m_Layer: 0
+  - component: {fileID: 1317846707}
+  m_Layer: 15
   m_Name: Vending Machine Dialogue
-  m_TagString: VendingMachineTutorialDialogue
+  m_TagString: Vending Machine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10316,7 +10493,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1317846702}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 21.638, y: 7.593, z: 9.366}
+  m_LocalPosition: {x: 21.087, y: 8.496, z: 10.71}
   m_LocalScale: {x: 0.66259605, y: 0.66259605, z: 0.66259605}
   m_Children: []
   m_Father: {fileID: 1878986876}
@@ -10333,7 +10510,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1.64
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1317846705
 MeshRenderer:
@@ -10384,6 +10561,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1317846702}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1317846707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317846702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3220318b0d7ba924bac1bc523522db83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1333652878 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7737259515347223966, guid: 2df01c394d528d142b71614633789a12, type: 3}
@@ -10602,7 +10791,8 @@ GameObject:
   - component: {fileID: 1384313502}
   - component: {fileID: 1384313501}
   - component: {fileID: 1384313500}
-  m_Layer: 0
+  - component: {fileID: 1384313503}
+  m_Layer: 15
   m_Name: Art Dialogue
   m_TagString: ArtDialogue
   m_Icon: {fileID: 0}
@@ -10617,7 +10807,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1384313498}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 26.289, y: 7.587, z: 9.012}
+  m_LocalPosition: {x: 26.117, y: 8.136, z: 10.396}
   m_LocalScale: {x: 0.66259605, y: 0.66259605, z: 0.66259605}
   m_Children: []
   m_Father: {fileID: 1878986876}
@@ -10634,7 +10824,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 2.13
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1384313501
 MeshRenderer:
@@ -10685,6 +10875,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1384313498}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1384313503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384313498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88fc1cf69f3e628408f5573e6c637954, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1385206808
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15348,7 +15550,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.5, z: 0.5}
+  m_Size: {x: 0.08, y: 0.5, z: 0.5}
   m_Center: {x: 0, y: 0.25, z: 0}
 --- !u!114 &2036008221
 MonoBehaviour:

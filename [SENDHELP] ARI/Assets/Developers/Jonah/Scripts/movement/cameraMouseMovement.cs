@@ -11,13 +11,13 @@ public class cameraMouseMovement : MonoBehaviour
     float mouseXAxis;
     float mouseYAxis;
 
-    public Camera cam;
+    //public Camera cam;
     public bool dialogue = true;
 
     void Start()
     {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        /*Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;*/
         
     }
 
@@ -27,6 +27,8 @@ public class cameraMouseMovement : MonoBehaviour
         //KBM Controls
         if (dialogue == true)
         {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
             mouseXAxis = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
             mouseYAxis = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 

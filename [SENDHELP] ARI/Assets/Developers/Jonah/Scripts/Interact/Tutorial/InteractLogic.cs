@@ -19,6 +19,7 @@ public class InteractLogic : MonoBehaviour
     public GameObject terminal;
     bool keyGrabbed;
     bool interacting = false;
+    bool dialogueOver = false;
 
     //Terminal Variables
     public string SceneToLoad;
@@ -29,13 +30,24 @@ public class InteractLogic : MonoBehaviour
     public AudioClip terminalClip;
     public Collider terminalCollider;
 
+    private Dialogue startDialogue;
+
 
 
     void Start()
     {
         cameraPrivate = GetComponent<InteractLogic>().cam;
+        
+        startDialogue = GetComponent<TutorialDialogue>().startDialogue;
+        DialogueTrigger startTrigger = FindObjectOfType<DialogueTrigger>();
+        startTrigger.dialogue = startDialogue;
+        startTrigger.TriggerDialogue();
+        Debug.LogWarning(startDialogue.names);
+        
+
         terminal.GetComponent<SceneChangeInteract>().enabled = false;
         keyGrabbed = false;
+        
 
     }
 
@@ -66,10 +78,27 @@ public class InteractLogic : MonoBehaviour
             // Key contol for interaction
             if (Input.GetKeyDown(KeyCode.E) && interacting == true)
             {
-                
 
-                //Keycard Grabbed
-                if (hitInfo.collider.name == "Chip Node")
+                if (hitInfo.collider.CompareTag("Vending Machine"))
+                {
+                    var vendingDialogue = GetComponent<TutorialDialogue>().vendingDialogue;
+                    var vendingTrigger = FindObjectOfType<DialogueTrigger>();
+                    vendingTrigger.dialogue = vendingDialogue;
+                    vendingTrigger.TriggerDialogue();
+                }
+
+                //Chip Grabbed
+                if (hitInfo.collider.name == "Chip Node" && dialogueOver == false)
+                {
+
+                    var chipDialogue = GetComponent<TutorialDialogue>().chipDialogue;
+                    var chipTrigger = FindObjectOfType<DialogueTrigger>();
+                    chipTrigger.dialogue = chipDialogue;
+                    chipTrigger.TriggerDialogue();
+                    dialogueOver = true;
+                    
+                }
+                else if (hitInfo.collider.name == "Chip Node" && dialogueOver == true)
                 {
                     keyGrabbed = true;
 
@@ -77,18 +106,62 @@ public class InteractLogic : MonoBehaviour
 
                     // Play sound on interact
                     source.PlayOneShot(clip, 7f);
+                    
                     //Destroy object
                     Destroy(GameObject.FindWithTag("Chip Node"));
                     Debug.Log("Destroy " + "Chip Node");
+
+                    dialogueOver = false;
                 }
 
-                if (hitInfo.collider.name == "Terminal Node" && keyGrabbed == true)
+                if (hitInfo.collider.CompareTag("WindowDialogue"))
+                {
+                    Debug.LogWarning("Triggered");
+                    var windowDialogue = GetComponent<TutorialDialogue>().windowDialogue;
+                    var windowTrigger = FindObjectOfType<DialogueTrigger>();
+                    windowTrigger.dialogue = windowDialogue;
+                    windowTrigger.TriggerDialogue();
+                    
+                }
+
+                if (hitInfo.collider.CompareTag("PlantDialogue"))
+                {
+                    var plantDialogue = GetComponent<TutorialDialogue>().plantDialogue;
+                    var plantTrigger = FindObjectOfType<DialogueTrigger>();
+                    plantTrigger.dialogue = plantDialogue;
+                    plantTrigger.TriggerDialogue();
+                }               
+
+                if (hitInfo.collider.CompareTag("ArtDialogue"))
+                {
+                    var artDialogue = GetComponent<TutorialDialogue>().artDialogue;
+                    var artTrigger = FindObjectOfType<DialogueTrigger>();
+                    artTrigger.dialogue = artDialogue;
+                    artTrigger.TriggerDialogue();
+                }
+
+                if (hitInfo.collider.CompareTag("BlackboardDialogue"))
+                {
+                    var boardDialogue = GetComponent<TutorialDialogue>().boardDialogue;
+                    var boardTrigger = FindObjectOfType<DialogueTrigger>();
+                    boardTrigger.dialogue = boardDialogue;
+                    boardTrigger.TriggerDialogue();
+                }
+
+                if (hitInfo.collider.name == "Terminal Node" && keyGrabbed == true && dialogueOver == false)
+                {
+                    var terminalDialogue = GetComponent<TutorialDialogue>().terminalDialogue;
+                    var terminalTrigger = FindObjectOfType<DialogueTrigger>();
+                    terminalTrigger.dialogue = terminalDialogue;
+                    terminalTrigger.TriggerDialogue();
+                    dialogueOver = true;
+                }
+                else if (hitInfo.collider.name == "Terminal Node" && keyGrabbed == true && dialogueOver == true)
                 {
                     LevelSelection.levelListDone.Add(levelDone);
                     source.PlayOneShot(clip, 7f);
                     anim.SetBool("MinigameWon", true);
                     Invoke("DelayedAction", delayTime);
-
                 }
             }           
         }

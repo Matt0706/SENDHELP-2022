@@ -48,6 +48,7 @@ TagManager:
   - Nav Room Pad
   - Nav Swipe Access
   - Start Sign
+  - Vending Machine
   layers:
   - Default
   - TransparentFX
