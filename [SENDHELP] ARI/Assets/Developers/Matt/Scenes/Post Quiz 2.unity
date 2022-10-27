@@ -6053,7 +6053,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: LEVEL O1 POSTQUIZ
+  m_Text: LEVEL O2 POSTQUIZ
 --- !u!222 &1831827360
 CanvasRenderer:
   m_ObjectHideFlags: 0

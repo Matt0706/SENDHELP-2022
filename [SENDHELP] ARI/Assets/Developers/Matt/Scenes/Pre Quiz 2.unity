@@ -3902,7 +3902,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: LEVEL 01 PREQUIZ
+  m_Text: LEVEL 02 PREQUIZ
 --- !u!222 &1195652524
 CanvasRenderer:
   m_ObjectHideFlags: 0
