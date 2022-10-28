@@ -611,7 +611,7 @@ public class QuizContents : MonoBehaviour
             currLevel++;
             //currQuestion++;
             nextButton.interactable = true;
-            Invoke("setFinished", 1f);
+            Invoke("setFinished", .1f);
             //currQuestion = 1;
         }
         if (finished)
