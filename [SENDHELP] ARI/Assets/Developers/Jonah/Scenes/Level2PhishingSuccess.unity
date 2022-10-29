@@ -27076,7 +27076,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 4bffff855c108e34c83d8605893f4c51, type: 3}
 --- !u!95 &568071209
@@ -27089,7 +27089,7 @@ Animator:
   m_GameObject: {fileID: 568071207}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 00d1308c985b044488a931ed1798db92, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 959f9ed79bf06c14ab58b6da6302cd84, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -129086,7 +129086,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7257136043761880691, guid: 5f61bc6ad093a1346924132db2f344b9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.175
+      value: 12.430575
       objectReference: {fileID: 0}
     - target: {fileID: 7257136043761880691, guid: 5f61bc6ad093a1346924132db2f344b9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -129094,11 +129094,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7257136043761880691, guid: 5f61bc6ad093a1346924132db2f344b9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.499
+      value: -17.12409
       objectReference: {fileID: 0}
     - target: {fileID: 7257136043761880691, guid: 5f61bc6ad093a1346924132db2f344b9, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.7579511
+      value: -0.99993867
       objectReference: {fileID: 0}
     - target: {fileID: 7257136043761880691, guid: 5f61bc6ad093a1346924132db2f344b9, type: 3}
       propertyPath: m_LocalRotation.x
@@ -129106,7 +129106,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7257136043761880691, guid: 5f61bc6ad093a1346924132db2f344b9, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.65231144
+      value: 0.011074164
       objectReference: {fileID: 0}
     - target: {fileID: 7257136043761880691, guid: 5f61bc6ad093a1346924132db2f344b9, type: 3}
       propertyPath: m_LocalRotation.z
@@ -129118,7 +129118,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7257136043761880691, guid: 5f61bc6ad093a1346924132db2f344b9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -278.568
+      value: -361.269
       objectReference: {fileID: 0}
     - target: {fileID: 7257136043761880691, guid: 5f61bc6ad093a1346924132db2f344b9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -129143,7 +129143,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7190851603241998710}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a409d508ac731c948b4c9877cf27b057, type: 3}
+  m_Script: {fileID: 11500000, guid: 6656346130a040d48b6eab13ec756c92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 1.52
@@ -129155,9 +129155,9 @@ MonoBehaviour:
   source: {fileID: 0}
   clip: {fileID: 0}
   notepadCollider: {fileID: 425791521}
-  SceneToLoad: Phishing
+  SceneToLoad: 
   delayTime: 3
-  levelDone: 3
+  levelDone: 0
   anim: {fileID: 1304427068}
   terminalSource: {fileID: 1837680142}
   terminalClip: {fileID: 8300000, guid: 078a6a7800affd94aad4531c5453c66c, type: 3}
@@ -129165,6 +129165,9 @@ MonoBehaviour:
   bedTerminalCollider: {fileID: 1385664767}
   dialogueOver: 0
   swipeCollider: {fileID: 207586356}
+  swipeSource: {fileID: 1837680142}
+  swipeClip: {fileID: 8300000, guid: 0c008ee3ee72a4362a35be25fa5de043, type: 3}
+  swipeAnim: {fileID: 568071209}
 --- !u!114 &7190851603241998712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129181,9 +129184,11 @@ MonoBehaviour:
     names:
     - "STATION AI\t"
     - ARI
+    - STATION AI
     sentences:
-    - PLEASE INTERFACE WITH SYSTEM ADMIN TERMINAL TO INITIALIZE REPAIRS
-    - "Let\u2019s see what went wrong here"
+    - I am surpised.... You actually made the right decision.
+    - 'Oh come on. I totally knew those were fake emails '
+    - 'Yeah right.... '
   powerNotepad:
     names:
     - ARI
@@ -129193,7 +129198,7 @@ MonoBehaviour:
     names:
     - STATION AI
     sentences:
-    - ACCESS DENIED
+    - ACCESS GRANTED
   preterminalDialogue:
     names:
     - STATION A.I.
@@ -129207,21 +129212,5 @@ MonoBehaviour:
   bedterminalDialogue:
     names:
     - STATION AI
-    - ARI
-    - ARI
-    - STATION AI
-    - ARI
-    - STATION AI
-    - ARI
     sentences:
-    - PLEASE INTERFACE WITH SYSTEM ADMIN TERMINAL TO INITIALIZE REPAIRS
-    - "Let\u2019s see what went wrong here"
-    - Well lucky me the President of the UNiverse says if I send him my administrative
-      log in he can find me the terminal password
-    - 'THAT WOULD NOT BE ADVISABLE '
-    - "Oh what do you know? You haven\u2019t even walked around let alone sent someone
-      an email "
-    - "STATION AI: I AM FULLY INTEGRATED IN THIS STATION, CONSISTING OF OVER 425,000
-      NODES I\u2026.."
-    - "You still don\u2019t have legs and you aren\u2019t in contact with the president
-      of the Universe so I think you have nothing to tell me here"
+    - TERMINAL COMPLETE

@@ -53,4 +53,19 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Developers/Joseph/MiniGames/Assets/Scenes/Platformer.unity
     guid: 9d622ea01a0bb4c40b13ee908a557071
+  - enabled: 1
+    path: Assets/Developers/Jonah/Scenes/Level02.unity
+    guid: 8ba37e991efde2c4287e93801a2c235e
+  - enabled: 1
+    path: Assets/Developers/Jonah/Scenes/Lockdown.unity
+    guid: 72b1294e2cee4c9448166f923a7b8b8e
+  - enabled: 1
+    path: Assets/Developers/Matt/Scenes/Phishing.unity
+    guid: c6fab533e06edfe4d971e78ea385eb3f
+  - enabled: 1
+    path: Assets/Developers/Matt/Scenes/Post Quiz 2.unity
+    guid: 3954b0939598bb7429eef7e20cf6533b
+  - enabled: 1
+    path: Assets/Developers/Matt/Scenes/Pre Quiz 2.unity
+    guid: b98f9fbd4a0b1e34cb7ffbd8b2b95cad
   m_configObjects: {}
