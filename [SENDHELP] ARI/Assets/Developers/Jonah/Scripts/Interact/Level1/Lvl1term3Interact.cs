@@ -43,6 +43,10 @@ public class Lvl1term3Interact : MonoBehaviour
 
     void Start()
     {
+        var startDialogue = GetComponent<Lvl1Term3Dialogue>().startDialogue;
+        var startTrigger = FindObjectOfType<DialogueTrigger>();
+        startTrigger.dialogue = startDialogue;
+        startTrigger.TriggerDialogue();
         cameraPrivate = GetComponent<Lvl1term3Interact>().cam;
         padRead1 = false;
     }

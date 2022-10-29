@@ -122,7 +122,6 @@ public class Level1Interact : MonoBehaviour
                 }
                 else if (hitInfo.collider.CompareTag("Terminal Node") && padRead == true && dialogueOver == true)
                 {
-
                     LevelSelection.levelListDone.Add(levelDone);
                     terminalSource.PlayOneShot(terminalClip, 7f);
                     anim.SetBool("MinigameWon", true);
