@@ -21,6 +21,8 @@ public class CryptographyTextGenerator : MonoBehaviour
     public void Start()
     {
         Generate(FindObjectOfType<CryptographyGameManager>().GetLevel());
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     void Generate(int stage)

@@ -50,6 +50,8 @@ TagManager:
   - Start Sign
   - Vending Machine
   - Power Room Pad
+  - Power Terminal
+  - Bedroom Terminal
   layers:
   - Default
   - TransparentFX
