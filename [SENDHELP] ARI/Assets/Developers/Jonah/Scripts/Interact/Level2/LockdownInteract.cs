@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Level2Interact : MonoBehaviour
+public class LockdownInteract : MonoBehaviour
 {
     [SerializeField] private float distance = 1f;
     [SerializeField] private LayerMask mask;
@@ -39,7 +39,7 @@ public class Level2Interact : MonoBehaviour
         bedTerminalCollider.enabled = true;
         terminalCollider.enabled = true;
         notepadCollider.enabled = true;
-        cameraPrivate = GetComponent<Level2Interact>().cam;
+        cameraPrivate = GetComponent<LockdownInteract>().cam;
         var startDialogue = GetComponent<Level2Dialogue>().startDialogue;
         var startTrigger = FindObjectOfType<DialogueTrigger>();
         startTrigger.dialogue = startDialogue;
@@ -95,7 +95,7 @@ public class Level2Interact : MonoBehaviour
                     swipeTrigger.TriggerDialogue();
                 }
 
-                if (hitInfo.collider.CompareTag("Bedroom Terminal") && padRead == true && dialogueOver == false)
+                if (hitInfo.collider.CompareTag("Bedroom Terminal"))
                 {
                     var terminalDialogue = GetComponent<Level2Dialogue>().bedterminalDialogue;
                     var terminalTrigger = FindObjectOfType<DialogueTrigger>();
@@ -103,28 +103,23 @@ public class Level2Interact : MonoBehaviour
                     terminalTrigger.TriggerDialogue();
                     dialogueOver = true;
                 }                
-                else if (hitInfo.collider.CompareTag("Bedroom Terminal") && padRead == true && dialogueOver == true)
+
+                if (hitInfo.collider.CompareTag("Power Terminal") && dialogueOver == false)
+                {
+                    var terminalDialogue = GetComponent<Level2Dialogue>().powerterminalDialogue;
+                    var terminalTrigger = FindObjectOfType<DialogueTrigger>();
+                    terminalTrigger.dialogue = terminalDialogue;
+                    terminalTrigger.TriggerDialogue();
+                    dialogueOver = true;
+                }
+                else if (hitInfo.collider.CompareTag("Power Terminal") && dialogueOver == true)
                 {
                     LevelSelection.levelListDone.Add(levelDone);
                     terminalSource.PlayOneShot(terminalClip, 7f);
                     anim.SetBool("MinigameWon", true);
                     Invoke("DelayedAction", delayTime);
                 }
-                else if (hitInfo.collider.CompareTag("Bedroom Terminal") && padRead == false)
-                {
-                    var terminalDialogue = GetComponent<Level2Dialogue>().preterminalDialogue;
-                    var terminalTrigger = FindObjectOfType<DialogueTrigger>();
-                    terminalTrigger.dialogue = terminalDialogue;
-                    terminalTrigger.TriggerDialogue();
-                }
 
-                if (hitInfo.collider.CompareTag("Power Terminal"))
-                {
-                    var terminalDialogue = GetComponent<Level2Dialogue>().powerterminalDialogue;
-                    var terminalTrigger = FindObjectOfType<DialogueTrigger>();
-                    terminalTrigger.dialogue = terminalDialogue;
-                    terminalTrigger.TriggerDialogue();
-                }
             }
         }
     }

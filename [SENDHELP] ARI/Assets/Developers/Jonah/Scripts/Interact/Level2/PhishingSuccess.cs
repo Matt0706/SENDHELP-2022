@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Level2Interact : MonoBehaviour
+public class PhishingSuccess : MonoBehaviour
 {
     [SerializeField] private float distance = 1f;
     [SerializeField] private LayerMask mask;
@@ -30,6 +30,9 @@ public class Level2Interact : MonoBehaviour
     public bool dialogueOver = false;
 
     public Collider swipeCollider;
+    public AudioSource swipeSource;
+    public AudioClip swipeClip;
+    public Animator swipeAnim;
 
 
 
@@ -39,7 +42,7 @@ public class Level2Interact : MonoBehaviour
         bedTerminalCollider.enabled = true;
         terminalCollider.enabled = true;
         notepadCollider.enabled = true;
-        cameraPrivate = GetComponent<Level2Interact>().cam;
+        cameraPrivate = GetComponent<PhishingSuccess>().cam;
         var startDialogue = GetComponent<Level2Dialogue>().startDialogue;
         var startTrigger = FindObjectOfType<DialogueTrigger>();
         startTrigger.dialogue = startDialogue;
@@ -79,7 +82,6 @@ public class Level2Interact : MonoBehaviour
                 //Notepad Grabbed
                 if (hitInfo.collider.CompareTag("Power Room Pad"))
                 {
-                    padRead = true;
                     terminalCollider.enabled = true;
                     var powerpadDialogue = GetComponent<Level2Dialogue>().powerNotepad;
                     var powerpadTrigger = FindObjectOfType<DialogueTrigger>();
@@ -87,15 +89,23 @@ public class Level2Interact : MonoBehaviour
                     powerpadTrigger.TriggerDialogue();
                 }
 
-                if (hitInfo.collider.CompareTag("Swipe Access"))
+                if (hitInfo.collider.CompareTag("Swipe Access") && dialogueOver == false)
                 {
                     var swipeDialogue = GetComponent<Level2Dialogue>().swipeDialogue;
                     var swipeTrigger = FindObjectOfType<DialogueTrigger>();
                     swipeTrigger.dialogue = swipeDialogue;
                     swipeTrigger.TriggerDialogue();
+                    dialogueOver = true;
+                }
+                else if (hitInfo.collider.CompareTag("Swipe Access") && dialogueOver == true)
+                {
+                    swipeSource.PlayOneShot(swipeClip, 7f);
+                    Debug.Log("Sound Played");
+                    swipeAnim.SetBool("hasAccessKey", true);
+                    dialogueOver = false; 
                 }
 
-                if (hitInfo.collider.CompareTag("Bedroom Terminal") && padRead == true && dialogueOver == false)
+                if (hitInfo.collider.CompareTag("Bedroom Terminal"))
                 {
                     var terminalDialogue = GetComponent<Level2Dialogue>().bedterminalDialogue;
                     var terminalTrigger = FindObjectOfType<DialogueTrigger>();
@@ -103,20 +113,6 @@ public class Level2Interact : MonoBehaviour
                     terminalTrigger.TriggerDialogue();
                     dialogueOver = true;
                 }                
-                else if (hitInfo.collider.CompareTag("Bedroom Terminal") && padRead == true && dialogueOver == true)
-                {
-                    LevelSelection.levelListDone.Add(levelDone);
-                    terminalSource.PlayOneShot(terminalClip, 7f);
-                    anim.SetBool("MinigameWon", true);
-                    Invoke("DelayedAction", delayTime);
-                }
-                else if (hitInfo.collider.CompareTag("Bedroom Terminal") && padRead == false)
-                {
-                    var terminalDialogue = GetComponent<Level2Dialogue>().preterminalDialogue;
-                    var terminalTrigger = FindObjectOfType<DialogueTrigger>();
-                    terminalTrigger.dialogue = terminalDialogue;
-                    terminalTrigger.TriggerDialogue();
-                }
 
                 if (hitInfo.collider.CompareTag("Power Terminal"))
                 {
@@ -124,6 +120,7 @@ public class Level2Interact : MonoBehaviour
                     var terminalTrigger = FindObjectOfType<DialogueTrigger>();
                     terminalTrigger.dialogue = terminalDialogue;
                     terminalTrigger.TriggerDialogue();
+                    dialogueOver = true;
                 }
             }
         }
