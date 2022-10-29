@@ -26,8 +26,11 @@ public class GameManager : MonoBehaviour
     }
 
     void Start() {
-
-        startingNode.Arrive();
+        if (startingNode != null)
+        {
+            startingNode.Arrive();
+        }
+        
     
     
     

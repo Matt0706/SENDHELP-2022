@@ -101,7 +101,6 @@ public class LockdownInteract : MonoBehaviour
                     var terminalTrigger = FindObjectOfType<DialogueTrigger>();
                     terminalTrigger.dialogue = terminalDialogue;
                     terminalTrigger.TriggerDialogue();
-                    dialogueOver = true;
                 }                
 
                 if (hitInfo.collider.CompareTag("Power Terminal") && dialogueOver == false)
