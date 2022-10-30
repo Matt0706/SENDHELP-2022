@@ -68,4 +68,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Developers/Matt/Scenes/Pre Quiz 2.unity
     guid: b98f9fbd4a0b1e34cb7ffbd8b2b95cad
+  - enabled: 1
+    path: Assets/Developers/Jonah/Scenes/Level2PhishingSuccess.unity
+    guid: 056d7a5369cbd2842aef4d990a30188c
   m_configObjects: {}

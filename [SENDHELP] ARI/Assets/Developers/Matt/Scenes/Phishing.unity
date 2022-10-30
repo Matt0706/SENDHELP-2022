@@ -134,7 +134,6 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
-  - component: {fileID: 519420030}
   - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
@@ -150,22 +149,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 0
---- !u!114 &519420030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c84d05505707cf498881fe85798710c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SceneToLoad: Level01Terminal1
-  anim: {fileID: 538346472}
-  delayTime: 3
+  m_Enabled: 1
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -236,9 +220,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2db7c3a9f8b9cbe4d989ac2080ef3b03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneToLoad: 
-  anim: {fileID: 0}
-  delayTime: 0
+  SceneToLoad: Lockdown
+  anim: {fileID: 538346472}
+  delayTime: 3
 --- !u!95 &538346472 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 7259830951877396924, guid: a9094e6c615804d488f54c10b19d38e2, type: 3}
