@@ -2,54 +2,80 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using Random = System.Random;
 public class PhishingGameData : MonoBehaviour
 {
     // VARIABLES
     public string SceneToLoad;
     public Animator anim;
     public int delayTime;
-    int messageNum = 0;
-    List<string> emailAddresses = new List<string>() { "marzheir@sand.net", "friend@palebluedot.com", "phishingexample@a1b2c3.net", "phishingexample2@website.com", "anotherfriend@website.com"};
-    List<string> messages = new List<string>() { "Hi this is the Martian Prince. \nPls send money.",
-                                                "Hey ARI! I hope you're having fun up there!", 
-                                                "placeholder phishing scam", 
-                                                "placeholder phishing scam", 
-                                                "placeholder non-scam"};
+    int currMessage = 0;
+    bool onStartScreen = true;
+    List<string> emailAddresses = new List<string>() { "noreply@aamazon.com", "microsoftbilling@c2asdhj398.com", "ITsupport@xyz.net", "trustedbank@trustedbank.com", "HR@fakecompany.com"};
+    List<string> messages = new List<string>() { "Hello ARI,\nYou have been chosen as a recipient of a 100 \ndollars gift card! Click the link below to claim it:\namazom.com/giftcard",
+                                                "Hello, it is required for you to update your \ncredit card information. Please use the link \nbelow to enter your credit card number.\nbilling.micros0ft.com", 
+                                                "Hello ARI, there seems to be an issue with your \naccount login credentials. Please reply to this \nmessage with your username and password to this \nemail to rectify this issue.\nThank you, IT", 
+                                                "Hello valued customer,\nWe regret to inform you that your online banking access has been restricted. Please use the link \nbelow to sign in and fix this issue.\ntrustedbanklogin.scamsite.net", 
+                                                "Dear employee,\nYou are required to immediately review and \nelectronically sign our updated employee code of conduct. CLICK HERE to open the document.\nThank you, HR, FakeCompany"};
 
-    List<bool> isScam = new List<bool>() {true, false, true, true, false};
-    int scamsRemaining = 0;
+    static List<string> choices = new List<string>() {
+        "sender address",       //0
+        "suspicious link",      //1
+        "poor writing",         //2
+        "generic greeting",     //3
+        "personal information", //4
+        "urgency",              //5
+        "nothing"               //6
+    };
+    
+    /*
+    0, 1, 2
+    0, 1, 4
+    0, 4, 5
+    0, 1
+    0, 1, 3, 4
+    */
 
+    List<bool> usedMessages = new List<bool> {false, false, false, false, false, false, false, false, false, false};
+    int numCorrect = 0;
+    static Random rnd = new Random();
+    int usedCount = 0;
     void Start()
     {
-        for(int i = 0; i < isScam.Count; i++)
-            if (isScam[i]) scamsRemaining++;
-        UpdateScreen();
-    }
+        PasswordTerminalTerminal.ClearScreen();
+        PasswordTerminalTerminal.WriteLine("ARI, it seems we have scammers trying to \ninfiltrate our systems.");
+        PasswordTerminalTerminal.WriteLine("\nCheck your inbox and identify each thing wrong \nwith the emails.");
+        PasswordTerminalTerminal.WriteLine("\nPossible choices include \"sender address\", \n\"suspicious link\", \"spelling errors\", \nand \"nothing\"");
+        PasswordTerminalTerminal.WriteLine("\nType every correct choice then hit enter.\nFor example: \"sender address, suspicious link andspelling errors\" or \"nothing\"");
+        PasswordTerminalTerminal.WriteLine("\nType open to get started");
+        currMessage = rnd.Next(messages.Count);
+        while(this.usedMessages[currMessage] == true) {
+            currMessage = rnd.Next(messages.Count);
+        }
+    }   
 
     void UpdateScreen() {
+        this.usedMessages[currMessage] = true;
         PasswordTerminalTerminal.ClearScreen();
-        if(messageNum < messages.Count) {
-            PasswordTerminalTerminal.WriteLine("You have " + (messages.Count - messageNum) + " new messages");
-            PasswordTerminalTerminal.WriteLine("Please delete any phishing scams");
-            PasswordTerminalTerminal.WriteLine("\nFrom: " + emailAddresses[messageNum]);
-            PasswordTerminalTerminal.WriteLine(messages[messageNum]);
-            PasswordTerminalTerminal.WriteLine("\nType delete if this is a phishing scam");
-            PasswordTerminalTerminal.WriteLine("Otherwise type next");
+        if(usedCount < messages.Count) {
+            PasswordTerminalTerminal.WriteLine("You have " + (messages.Count - usedCount) + " new messages");
+            PasswordTerminalTerminal.WriteLine("Phishing signs: sender address | suspicious link poor writing | generic greeting | \npersonal information | urgency");
+            PasswordTerminalTerminal.WriteLine("\nFrom: " + emailAddresses[currMessage]);
+            PasswordTerminalTerminal.WriteLine(messages[currMessage]);
+            PasswordTerminalTerminal.WriteLine("\nType every sign you see, then hit enter");
+            PasswordTerminalTerminal.WriteLine("Otherwise type \"nothing\"");
         }
         else endScreen();
     }
 
     void endScreen(){
-        if(scamsRemaining == 1) {
-            PasswordTerminalTerminal.WriteLine("You left 1 scam in your inbox.");
-        }
-        else PasswordTerminalTerminal.WriteLine("You left " + scamsRemaining + " scams in your inbox.");
-        if(scamsRemaining == 0){
+        PasswordTerminalTerminal.WriteLine("You got " + numCorrect + " out of " + messages.Count + " completely correct.");
+        double percentCorrect = numCorrect / (double)messages.Count;
+        if(percentCorrect > .65) {
             PasswordTerminalTerminal.WriteLine("Great work ARI!");
             SceneToLoad = "Level2PhishingSuccess";
         }
-        if(scamsRemaining > 0) {
+        else{
             PasswordTerminalTerminal.WriteLine("Warning! Detecting intruders in the network.");
         }
         Invoke("end", 5f);
@@ -62,16 +88,52 @@ public class PhishingGameData : MonoBehaviour
     }
     void OnUserInput(string Input)
     {
-        if (Input.ToLower() == "delete") {
-            if(isScam[messageNum]){
-                scamsRemaining--;
+        if(onStartScreen) {
+            if(Input.ToLower() == "open") {
+                onStartScreen = false;
+                UpdateScreen();
             }
-            messageNum++;
+            else Start();
         }
-        if(Input.ToLower() == "next") {
-            messageNum++;
+        else {
+            Input = Input.ToLower();
+            switch(currMessage) {
+                case(0):
+                    if(Input.Contains(choices[0]) && Input.Contains(choices[1]) && Input.Contains(choices[2]))
+                        if(!Input.Contains(choices[3]) && !Input.Contains(choices[4]) && !Input.Contains(choices[5]) && !Input.Contains(choices[6]))
+                            numCorrect++;
+                    break;
+                case(1):
+                    if(Input.Contains(choices[0]) && Input.Contains(choices[1]) && Input.Contains(choices[4]))
+                        if(!Input.Contains(choices[2]) && !Input.Contains(choices[3]) && !Input.Contains(choices[5]) && !Input.Contains(choices[6]))
+                            numCorrect++;
+                    break;
+                case(2):
+                    if(Input.Contains(choices[0]) && Input.Contains(choices[4]) && Input.Contains(choices[5]))
+                        if(!Input.Contains(choices[1]) && !Input.Contains(choices[2]) && !Input.Contains(choices[3]) && !Input.Contains(choices[6]))
+                            numCorrect++;
+                    break;
+                case(3):
+                    if(Input.Contains(choices[0]) && Input.Contains(choices[1]))
+                        if(!Input.Contains(choices[2]) && !Input.Contains(choices[3]) && !Input.Contains(choices[4]) && !Input.Contains(choices[5]) && !Input.Contains(choices[6]))
+                            numCorrect++;
+                    break;
+                case(4):
+                    if(Input.Contains(choices[0]) && Input.Contains(choices[1]) && Input.Contains(choices[3]) && Input.Contains(choices[4]))
+                        if(!Input.Contains(choices[2]) && !Input.Contains(choices[5]) && !Input.Contains(choices[6]))
+                            numCorrect++;
+                    break;
+                default:
+                    break;
+            }
+            usedMessages[currMessage] = true;
+            if(this.usedCount < (messages.Count - 1))
+                while(this.usedMessages[currMessage]) {
+                    currMessage = rnd.Next(messages.Count);
+                }
+            usedCount++;
+            UpdateScreen();
         }
-        UpdateScreen();
     }
     
 
