@@ -528,6 +528,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameData: {fileID: 11400000, guid: 5997e89b100bd7b47b8fcb689f4614f3, type: 2}
   OnWinEvent: {fileID: 11400000, guid: bf91a103bcae1d940bde6e88d8b3a627, type: 2}
+  SceneToLoad: Level01Terminal3
+  delayTime: 3
 --- !u!4 &634628529
 Transform:
   m_ObjectHideFlags: 0
