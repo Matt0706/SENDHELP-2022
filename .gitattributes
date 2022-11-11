@@ -1,0 +1,4 @@
+/[SENDHELP][[:space:]]ARI/Assets/Imported[[:space:]]Assets/Nebula[[:space:]]Skyboxes/Nebula_01_Cubemap.exr filter=lfs diff=lfs merge=lfs -text
+/[SENDHELP][[:space:]]ARI/Assets/Imported[[:space:]]Assets/Nebula[[:space:]]Skyboxes/*.exr filter=lfs diff=lfs merge=lfs -text
+[SENDHELP][[:space:]]ARI/Assets/Imported[[:space:]]Assets/Nebula[[:space:]]Skyboxes/Nebula_01_Cubemap.exr filter=lfs diff=lfs merge=lfs -text
+Nebula_01_Cubemap.exr filter=lfs diff=lfs merge=lfs -text
