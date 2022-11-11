@@ -14,19 +14,46 @@ public class WebsiteManager : MonoBehaviour
     public GameObject wireframe6;
     public Button button;
 
-    public int currSite = 0;
+    public int currSite = 1;
 
     public void changeSite() {
         switch(currSite) {
-            case(0):
-                wireframe1.transform.localPosition = new Vector3(0, 0, -10);
-                wireframe2.transform.localPosition = new Vector3(0, 0, 10);
+            case(1):
+                wireframe1.transform.localPosition = new Vector3(170.9f, 314.5f, 63f); //Into the background
+                wireframe2.transform.localPosition = new Vector3(170.9f, 314.5f, 53f); //Into the foreground
                 button.transform.localPosition = new Vector3(-50, -50, 0);
+                break;
+            case(2):
+                wireframe2.transform.localPosition = new Vector3(170.9f, 314.5f, 63f); //Into the background
+                wireframe3.transform.localPosition = new Vector3(170.9f, 314.5f, 53f); //Into the foreground
+                button.transform.localPosition = new Vector3(-50, -50, 0);
+                break;
+            case(3):
+                wireframe3.transform.localPosition = new Vector3(170.9f, 314.5f, 63f); //Into the background
+                wireframe4.transform.localPosition = new Vector3(170.9f, 314.5f, 53f); //Into the foreground
+                button.transform.localPosition = new Vector3(-50, -50, 0);
+                break;
+            case(4):
+                wireframe4.transform.localPosition = new Vector3(170.9f, 314.5f, 63f); //Into the background
+                wireframe5.transform.localPosition = new Vector3(170.9f, 314.5f, 53f); //Into the foreground
+                button.transform.localPosition = new Vector3(-50, -50, 0);
+                break;
+            case(5):
+                wireframe5.transform.localPosition = new Vector3(170.9f, 314.5f, 63f); //Into the background
+                wireframe6.transform.localPosition = new Vector3(170.9f, 314.5f, 53f); //Into the foreground
+                button.transform.localPosition = new Vector3(-50, -50, 0);
+                break;
+            case(6):
+                endGame();
                 break;
             default:
                 break;
         }
+        currSite++;
     }
 
 
+    void endGame() {
+        Debug.Log("Game over");
+    }
 }
