@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = System.Random;
 
 public class WebsiteManager : MonoBehaviour
 {
@@ -12,48 +13,76 @@ public class WebsiteManager : MonoBehaviour
     public GameObject wireframe4;
     public GameObject wireframe5;
     public GameObject wireframe6;
+    public GameObject wireframe7;
+    public GameObject wireframe8;
+    public GameObject wireframe9;
+    public GameObject wireframe10;
+    private List<GameObject> wireframes;
     public Button button;
+    private Random rnd = new Random();
+    private List<bool> usedSites = new List<bool>{false, false, false, false, false, false, false, false, false, false};
+    public int currSite = 0;
+    private int usedCount = 0;
+    private Vector3 background = new Vector3(0, 0, 0);
+    private Vector3 foreground = new Vector3(0, 0, -10);
+    private int numCorrect;
+    private bool gameOver = false;
 
-    public int currSite = 1;
-
-    public void changeSite() {
-        switch(currSite) {
-            case(1):
-                wireframe1.transform.localPosition = new Vector3(170.9f, 314.5f, 63f); //Into the background
-                wireframe2.transform.localPosition = new Vector3(170.9f, 314.5f, 53f); //Into the foreground
-                button.transform.localPosition = new Vector3(-50, -50, 0);
-                break;
-            case(2):
-                wireframe2.transform.localPosition = new Vector3(170.9f, 314.5f, 63f); //Into the background
-                wireframe3.transform.localPosition = new Vector3(170.9f, 314.5f, 53f); //Into the foreground
-                button.transform.localPosition = new Vector3(-50, -50, 0);
-                break;
-            case(3):
-                wireframe3.transform.localPosition = new Vector3(170.9f, 314.5f, 63f); //Into the background
-                wireframe4.transform.localPosition = new Vector3(170.9f, 314.5f, 53f); //Into the foreground
-                button.transform.localPosition = new Vector3(-50, -50, 0);
-                break;
-            case(4):
-                wireframe4.transform.localPosition = new Vector3(170.9f, 314.5f, 63f); //Into the background
-                wireframe5.transform.localPosition = new Vector3(170.9f, 314.5f, 53f); //Into the foreground
-                button.transform.localPosition = new Vector3(-50, -50, 0);
-                break;
-            case(5):
-                wireframe5.transform.localPosition = new Vector3(170.9f, 314.5f, 63f); //Into the background
-                wireframe6.transform.localPosition = new Vector3(170.9f, 314.5f, 53f); //Into the foreground
-                button.transform.localPosition = new Vector3(-50, -50, 0);
-                break;
-            case(6):
-                endGame();
-                break;
-            default:
-                break;
-        }
-        currSite++;
+    void Start() {
+        wireframes = new List<GameObject>{wireframe1, wireframe2, wireframe3, wireframe4, wireframe5, wireframe6, wireframe7, wireframe8, wireframe9, wireframe10};
+        currSite = rnd.Next(wireframes.Count);
+        wireframes[currSite].transform.localPosition = foreground;
     }
 
+    public void changeSite() {
+
+        wireframes[currSite].transform.localPosition = background;
+
+        usedSites[currSite] = true;
+        if(usedCount < wireframes.Count - 1)
+        while(usedSites[currSite])
+            currSite = rnd.Next(wireframes.Count);
+        usedCount++;
+
+        wireframes[currSite].transform.localPosition = foreground;
+        
+    }
+
+    public void onRealClick() {
+        if(!gameOver) {
+            if(usedCount == wireframes.Count -1)
+                if(currSite == 8 || currSite == 9)
+                    numCorrect++;
+            if(usedCount < wireframes.Count - 1){
+                if(currSite == 8 || currSite == 9)
+                    numCorrect++;
+                changeSite();
+            }
+            else gameOver = true;
+        }
+        else endGame();
+    }
+
+    public void onFakeClick() {
+        if(!gameOver) {
+            if(usedCount == wireframes.Count - 1)
+                if(currSite != 8 && currSite != 9)
+                    numCorrect++;
+            if(usedCount < wireframes.Count - 1){
+                if(currSite != 8 && currSite != 9)
+                    numCorrect++;
+                changeSite();
+            }
+            else gameOver = true;
+        }
+        else endGame();
+    }
 
     void endGame() {
-        Debug.Log("Game over");
+        Debug.Log("Number Correct: " + numCorrect);
+        if(numCorrect >= 7)
+            Debug.Log("WINNER");
+        else
+            Debug.Log("LOSER");
     }
 }
