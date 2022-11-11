@@ -11,12 +11,16 @@ public class PhishingGameData : MonoBehaviour
     public int delayTime;
     int currMessage = 0;
     bool onStartScreen = true;
-    List<string> emailAddresses = new List<string>() { "noreply@aamazon.com", "microsoftbilling@c2asdhj398.com", "ITsupport@xyz.net", "trustedbank@trustedbank.com", "HR@fakecompany.com"};
+    List<string> emailAddresses = new List<string>() { "noreply@aamazon.com", "microsoftbilling@c2asdhj398.com", "ITsupport@xyz.net", "trustedbank@trustedbank.com", "HR@fakecompany.com", "spacesoftware@spacesoftware.com", "Bisa<EZheng@Pacific.com>", "Fitzgerald Docking & Co.<Fits@FitzDockCo.com>", "CaptainAI@cyber.net"};
     List<string> messages = new List<string>() { "Hello ARI,\nYou have been chosen as a recipient of a 100 \ndollars gift card! Click the link below to claim it:\namazom.com/giftcard",
                                                 "Hello, it is required for you to update your \ncredit card information. Please use the link \nbelow to enter your credit card number.\nbilling.micros0ft.com", 
                                                 "Hello ARI, there seems to be an issue with your \naccount login credentials. Please reply to this \nmessage with your username and password to this \nemail to rectify this issue.\nThank you, IT", 
                                                 "Hello valued customer,\nWe regret to inform you that your online banking access has been restricted. Please use the link \nbelow to sign in and fix this issue.\ntrustedbanklogin.scamsite.net", 
-                                                "Dear employee,\nYou are required to immediately review and \nelectronically sign our updated employee code of conduct. CLICK HERE to open the document.\nThank you, HR, FakeCompany"};
+                                                "Dear employee,\nYou are required to immediately review and \nelectronically sign our updated employee code of conduct. CLICK HERE to open the document.\nThank you, HR, FakeCompany",
+                                                "Dear user, we are ending support for all outdatedversions of the current software you are on as of 2/8/2072 12:00:00 A.M.\nClick the link below immediately to install the\nlatest version of the software",
+                                                "Review your information\nDue to recent activity, we have temporarily \nsuspended your account until verification. Pls\nsend us your information by 11/2/2072 4:55:28 PM To continue using our service, we advise you to\nupdate your account information.\nbanking.info.com",
+                                                "Your docking itinerary\nDocking Duration: 6 days | Arrival: March 2, 2072Name: Ari | Confirmation Number: DJ93N5\nDeparture: March 7, 2072 | Location: CKE Port 309",
+                                                "Ari, remember to complete the tasks in the note Igave you in the power room.\nThanks"};
 
     static List<string> choices = new List<string>() {
         "sender address",       //0
@@ -28,13 +32,6 @@ public class PhishingGameData : MonoBehaviour
         "nothing"               //6
     };
     
-    /*
-    0, 1, 2
-    0, 1, 4
-    0, 4, 5
-    0, 1
-    0, 1, 3, 4
-    */
 
     List<bool> usedMessages = new List<bool> {false, false, false, false, false, false, false, false, false, false};
     int numCorrect = 0;
@@ -71,7 +68,7 @@ public class PhishingGameData : MonoBehaviour
     void endScreen(){
         PasswordTerminalTerminal.WriteLine("You got " + numCorrect + " out of " + messages.Count + " completely correct.");
         double percentCorrect = numCorrect / (double)messages.Count;
-        if(percentCorrect > .65) {
+        if(percentCorrect > .5) {
             PasswordTerminalTerminal.WriteLine("Great work ARI!");
             SceneToLoad = "Level2PhishingSuccess";
         }
@@ -86,6 +83,20 @@ public class PhishingGameData : MonoBehaviour
         anim.SetBool("MinigameWon", true);
         Invoke("DelayedAction", delayTime);
     }
+
+    /*
+    Answer Key
+    0:  0, 1, 2
+    1:  0, 1, 4
+    2:  0, 4, 5
+    3:  0, 1
+    4:  0, 1, 3, 4
+    5:  1, 3
+    6:  1, 2, 4
+    7:  6
+    8:  6
+    */
+
     void OnUserInput(string Input)
     {
         if(onStartScreen) {
@@ -122,6 +133,24 @@ public class PhishingGameData : MonoBehaviour
                     if(Input.Contains(choices[0]) && Input.Contains(choices[1]) && Input.Contains(choices[3]) && Input.Contains(choices[4]))
                         if(!Input.Contains(choices[2]) && !Input.Contains(choices[5]) && !Input.Contains(choices[6]))
                             numCorrect++;
+                    break;
+                case(5):
+                    if(Input.Contains(choices[1]) && Input.Contains(choices[3]))
+                        if(!Input.Contains(choices[0]) && !Input.Contains(choices[2]) && !Input.Contains(choices[4]) && !Input.Contains(choices[5]) && !Input.Contains(choices[6]))
+                            numCorrect++;
+                    break;
+                case(6):
+                    if(Input.Contains(choices[1]) && Input.Contains(choices[2]) && Input.Contains(choices[4]))
+                        if(!Input.Contains(choices[0]) && !Input.Contains(choices[3]) && !Input.Contains(choices[5]) && !Input.Contains(choices[6]))
+                            numCorrect++;
+                    break;
+                case(7):
+                    if(Input.Contains(choices[6]))
+                        numCorrect++;
+                    break;
+                case(8):
+                    if(Input.Contains(choices[6]))
+                        numCorrect++;
                     break;
                 default:
                     break;
