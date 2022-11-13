@@ -52,6 +52,14 @@ TagManager:
   - Power Room Pad
   - Power Terminal
   - Bedroom Terminal
+  - Engine Terminal
+  - Airlock Terminal
+  - Airlock Swipe Access
+  - Observation Pad
+  - Office Terminal
+  - enginePad1
+  - enginePad2
+  - enginePad3
   layers:
   - Default
   - TransparentFX
