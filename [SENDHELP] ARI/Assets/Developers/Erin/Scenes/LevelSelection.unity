@@ -15464,7 +15464,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayTime: 3
-  ScreenName: StartingScene
+  ScreenName: Pre Quiz 2
 --- !u!1 &523663653
 GameObject:
   m_ObjectHideFlags: 0
