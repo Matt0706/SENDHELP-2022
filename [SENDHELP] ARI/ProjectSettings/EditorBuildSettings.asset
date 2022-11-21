@@ -57,6 +57,9 @@ EditorBuildSettings:
     path: Assets/Developers/Jonah/Scenes/Level02.unity
     guid: 8ba37e991efde2c4287e93801a2c235e
   - enabled: 1
+    path: Assets/Developers/Jonah/Scenes/Level2Part3.unity
+    guid: a94063ec491eda04a878dc234a45dae0
+  - enabled: 1
     path: Assets/Developers/Jonah/Scenes/Lockdown.unity
     guid: 72b1294e2cee4c9448166f923a7b8b8e
   - enabled: 1
