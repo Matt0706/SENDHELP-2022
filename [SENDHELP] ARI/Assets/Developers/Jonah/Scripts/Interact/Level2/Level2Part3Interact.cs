@@ -33,6 +33,7 @@ public class Level2Part3Interact : MonoBehaviour
     public bool dialogueOver = false;
 
     public Collider swipeCollider;
+    public Collider airlockSwipe;
     public AudioSource swipeSource;
     public AudioClip swipeClip;
     public Animator swipeAnim;
@@ -42,6 +43,7 @@ public class Level2Part3Interact : MonoBehaviour
     void Start()
     {
         swipeCollider.enabled = true;
+        airlockSwipe.enabled = true;
         bedTerminalCollider.enabled = true;
         terminalCollider.enabled = true;
         notepadCollider.enabled = true;
@@ -174,6 +176,14 @@ public class Level2Part3Interact : MonoBehaviour
                 if (hitInfo.collider.CompareTag("Power Terminal"))
                 {
                     var terminalDialogue = GetComponent<Level2Dialogue>().powerterminalDialogue;
+                    var terminalTrigger = FindObjectOfType<DialogueTrigger>();
+                    terminalTrigger.dialogue = terminalDialogue;
+                    terminalTrigger.TriggerDialogue();
+                }
+
+                if (hitInfo.collider.CompareTag("Airlock Swipe Access"))
+                {
+                    var terminalDialogue = GetComponent<Level2Dialogue>().accessDeniedDialogue;
                     var terminalTrigger = FindObjectOfType<DialogueTrigger>();
                     terminalTrigger.dialogue = terminalDialogue;
                     terminalTrigger.TriggerDialogue();

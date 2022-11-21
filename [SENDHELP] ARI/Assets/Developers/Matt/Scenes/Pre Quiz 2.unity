@@ -4348,7 +4348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d92f6f2aea04dae4e823d573688438a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneToLoad: Level01
+  SceneToLoad: Level02
   source: {fileID: 2105199829}
   clip: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
   anim: {fileID: 1757136661}
