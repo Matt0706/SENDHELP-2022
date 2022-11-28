@@ -35,6 +35,10 @@ public class Lvl1term3Interact : MonoBehaviour
     public Collider notepad1Collider;
 
 
+    public Animator anim;
+    public Collider cabinetCollider;
+
+
     //Dialogue
     public Animator[] dialogueAnimation;
 
@@ -54,8 +58,10 @@ public class Lvl1term3Interact : MonoBehaviour
 
     void Update()
     {
+        cabinetCollider.enabled = true;
         swipeCollider.enabled = true;
         notepad1Collider.enabled = true;
+        exitswipeCollider.enabled = true;
         UpdateUIDisappear();
 
         //Creates an array at the center of the player camera
@@ -111,24 +117,12 @@ public class Lvl1term3Interact : MonoBehaviour
                 }
 
 
-
-
-                //Terminal
-                if (hitInfo.collider.CompareTag("Swipe Access") && padRead1 == true && dialogueOver == false)
+                if (hitInfo.collider.CompareTag("Swipe Access"))
                 {
                     var swipeDialogue = GetComponent<Lvl1Term3Dialogue>().swipeDialogue;
                     var swipeTrigger = FindObjectOfType<DialogueTrigger>();
                     swipeTrigger.dialogue = swipeDialogue;
                     swipeTrigger.TriggerDialogue();
-                    dialogueOver = true;
-                }
-                else if (hitInfo.collider.CompareTag("Swipe Access") && padRead1 == true && dialogueOver == true)
-                {
-                    LevelSelection.levelListDone.Add(levelDone);
-                    exitswipeSource.PlayOneShot(exitswipeClip, 7f);
-                    exitswipeAnim.SetBool("MinigameWon", true);
-                    Invoke("DelayedAction", delayTime);
-                    dialogueOver = false;
                 }
 
                 if (hitInfo.collider.CompareTag("ComputerDeskDialogue"))
@@ -145,6 +139,21 @@ public class Lvl1term3Interact : MonoBehaviour
                     var vendingTrigger = FindObjectOfType<DialogueTrigger>();
                     vendingTrigger.dialogue = vendingDialogue;
                     vendingTrigger.TriggerDialogue();
+                }
+
+                if (hitInfo.collider.CompareTag("LockCabinet") && dialogueOver == false)
+                {
+                    var terminalDialogue = GetComponent<Lvl1Term3Dialogue>().cabinetDialogue;
+                    var terminalTrigger = FindObjectOfType<DialogueTrigger>();
+                    terminalTrigger.dialogue = terminalDialogue;
+                    terminalTrigger.TriggerDialogue();
+                    dialogueOver = true;
+                }
+                else if (hitInfo.collider.CompareTag("LockCabinet") && dialogueOver == true)
+                {
+                    LevelSelection.levelListDone.Add(levelDone);
+                    anim.SetBool("MinigameWon", true);
+                    Invoke("DelayedAction", delayTime);
                 }
             }
         }

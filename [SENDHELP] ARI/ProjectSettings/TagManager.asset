@@ -60,6 +60,8 @@ TagManager:
   - enginePad1
   - enginePad2
   - enginePad3
+  - LockCabinet
+  - Phone
   layers:
   - Default
   - TransparentFX
