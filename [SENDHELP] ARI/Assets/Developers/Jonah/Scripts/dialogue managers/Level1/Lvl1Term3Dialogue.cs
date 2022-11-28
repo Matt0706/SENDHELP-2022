@@ -10,4 +10,6 @@ public class Lvl1Term3Dialogue : MonoBehaviour
     public Dialogue swipeDialogue;
     public Dialogue deskDialogue;
     public Dialogue vendingDialogue;
+    public Dialogue cabinetDialogue;
+    public Dialogue accessDeniedDialogue;
 }
