@@ -25,7 +25,6 @@ public class PowerGameManager : MonoBehaviour
     {
         initColors();
         Random rnd = new Random();
-        int i = 0;
         if(rnd.Next(2) == 0)
             fuse1.colors = red;
         else fuse1.colors = green;
