@@ -1952,7 +1952,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c6b3167dcd84a84b92cd0faeffd9189, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneToLoad: 
+  SceneToLoad: Level02
   fuse1: {fileID: 1843296862}
   fuse2: {fileID: 389290464}
   fuse3: {fileID: 1964865921}

@@ -24,17 +24,40 @@ public class PowerGameManager : MonoBehaviour
     void Start()
     {
         initColors();
-        fuse1.colors = red;
-        fuse2.colors = red;
-        fuse3.colors = green;
-        fuse4.colors = green;
-        fuse5.colors = green;
+        Random rnd = new Random();
+        int i = 0;
+        if(rnd.Next(2) == 0)
+            fuse1.colors = red;
+        else fuse1.colors = green;
+        if(rnd.Next(2) == 0)
+            fuse2.colors = red;
+        else fuse2.colors = green;
+        if(rnd.Next(2) == 0)
+            fuse3.colors = red;
+        else fuse3.colors = green;
+        if(rnd.Next(2) == 0)
+            fuse4.colors = red;
+        else fuse4.colors = green;
+        if(rnd.Next(2) == 0)
+            fuse5.colors = red;
+        else fuse5.colors = green;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(fuse1.colors == green &&
+            fuse2.colors == green &&
+            fuse3.colors == green &&
+            fuse4.colors == green &&
+            fuse5.colors == green) {
+                fuse1.enabled = false;
+                fuse2.enabled = false;
+                fuse3.enabled = false;
+                fuse4.enabled = false;
+                fuse5.enabled = false;
+                Invoke("changeScene", 1f);
+            }
     }
 
     public void fuse1Clicked() {
