@@ -39,6 +39,8 @@ public class PhishingGameData : MonoBehaviour
     int usedCount = 0;
     void Start()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         PasswordTerminalTerminal.ClearScreen();
         PasswordTerminalTerminal.WriteLine("ARI, it seems we have scammers trying to \ninfiltrate our systems.");
         PasswordTerminalTerminal.WriteLine("\nCheck your inbox and identify each thing wrong \nwith the emails.");

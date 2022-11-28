@@ -23,6 +23,8 @@ public class PowerGameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         initColors();
         Random rnd = new Random();
         int i = 0;

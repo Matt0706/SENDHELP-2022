@@ -54920,7 +54920,7 @@ MonoBehaviour:
   source: {fileID: 0}
   clip: {fileID: 0}
   notepadCollider: {fileID: 425791521}
-  SceneToLoad: 
+  SceneToLoad: Power
   delayTime: 3
   levelDone: 0
   anim: {fileID: 1304427068}

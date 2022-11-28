@@ -35,6 +35,8 @@ public class WebsiteManager : MonoBehaviour
     private bool gameOver = false;
 
     void Start() {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         wireframes = new List<GameObject>{wireframe1, wireframe2, wireframe3, wireframe4, wireframe5, wireframe6, wireframe7, wireframe8, wireframe9, wireframe10};
         websiteTutorial.transform.localPosition = foreground;
         realButton.gameObject.SetActive(false);
