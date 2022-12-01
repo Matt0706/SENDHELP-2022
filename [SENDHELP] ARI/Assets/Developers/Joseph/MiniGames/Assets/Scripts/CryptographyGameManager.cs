@@ -121,7 +121,7 @@ public class CryptographyGameManager : MonoBehaviour
         {
             stageText.text = "Stage: " + levelStage.ToString() + "\nROT13 Ciphers";
         }
-        else if (levelStage > 5)
+        if (levelStage > 3)
         {
 	    Debug.Log("TIME ELAPSED: " + Time.time);
             
