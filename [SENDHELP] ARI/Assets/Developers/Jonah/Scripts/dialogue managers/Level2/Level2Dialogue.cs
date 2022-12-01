@@ -10,7 +10,7 @@ public class Level2Dialogue : MonoBehaviour
     public Dialogue enginePad2;
     public Dialogue enginePad3;
     public Dialogue observationPad;
-    public Dialogue airlockPad;
+    public Dialogue airlockSwipe;
     public Dialogue swipeDialogue;
     public Dialogue preterminalDialogue;
     public Dialogue powerterminalDialogue;
