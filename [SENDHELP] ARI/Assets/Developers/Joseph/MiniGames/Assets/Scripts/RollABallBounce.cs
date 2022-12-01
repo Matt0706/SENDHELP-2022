@@ -6,7 +6,7 @@ public class RollABallBounce : MonoBehaviour
 {
 
     public float bounceForce = 200.0f;
-
+    private System.DateTime start = System.DateTime.Now;
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -15,8 +15,11 @@ public class RollABallBounce : MonoBehaviour
 
             if (playerRb != null)
             {
-                Vector3 bounceDir = -playerRb.velocity;
-                playerRb.AddForce(bounceDir * bounceForce);
+                if(System.DateTime.Now - start > System.TimeSpan.FromSeconds(1)) {
+                    Vector3 bounceDir = -playerRb.velocity;
+                    playerRb.AddForce(bounceDir * bounceForce);
+                }
+                start = System.DateTime.Now;
             }
         }
     }
