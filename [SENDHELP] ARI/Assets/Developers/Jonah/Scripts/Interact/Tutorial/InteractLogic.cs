@@ -32,6 +32,8 @@ public class InteractLogic : MonoBehaviour
 
     private Dialogue startDialogue;
 
+    public string SkipLevel;
+
 
 
     void Start()
@@ -59,7 +61,11 @@ public class InteractLogic : MonoBehaviour
         //Creates an array at the center of the player camera
         Ray ray = new Ray(cameraPrivate.transform.position, cameraPrivate.transform.forward);
         Debug.DrawRay(ray.origin, ray.direction * distance);
-        
+
+        if (Input.GetKeyDown(KeyCode.N)) {
+            Invoke("Skip", delayTime);
+        }
+
         //Collision information
         RaycastHit hitInfo;
         if (Physics.Raycast(ray, out hitInfo, distance, mask))
@@ -182,5 +188,11 @@ public class InteractLogic : MonoBehaviour
     {
         Debug.Log("Waiting for " + delayTime + " Seconds till next task.");
         SceneManager.LoadScene(SceneToLoad);
+    }
+
+    void Skip()
+    {
+        Debug.Log("Waiting for " + delayTime + " Seconds till next task.");
+        SceneManager.LoadScene(SkipLevel);
     }
 }

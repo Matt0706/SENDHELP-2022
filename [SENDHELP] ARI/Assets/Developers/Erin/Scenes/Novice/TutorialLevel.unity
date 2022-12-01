@@ -730,8 +730,7 @@ MonoBehaviour:
     - PLEASE FAMILIARIZE YOURSELF WITH YOUR MOTOR FUNCTIONS TO FULLY CALIBRATE YOUR
       UNIT.
     - TO OBSERVE AND FOCUS ON OBJECTS OF INTEREST OR TO MOVE TO A DIFFERENT PART
-      OF THE ROOM, CLICK WITH YOUR LMB (LEFT MOUSE BUTTON). TO RETURN TO YOUR PREVIOUS
-      STATE, USE RMB (RIGHT MOUSE BUTTON).
+      OF THE ROOM, USE THE WASD KEYS TO MOVE AND YOUR MOUSE TO LOOK AROUND
     - 'MISSION: ACCLIMATE YOURSELF TO YOUR SURROUNDINGS.'
   chipDialogue:
     names:
@@ -740,6 +739,7 @@ MonoBehaviour:
     - A.R.I.
     - STATION AI
     - A.R.I.
+    - TUTORIAL
     sentences:
     - Hm? What's this USB Chip?
     - 'The flat floppy disk shaped USB chip looks relatively new. On the front of
@@ -752,6 +752,7 @@ MonoBehaviour:
       PLEASE INTERFACE WITH THE TERMINAL, AND LEAVE IT ALONE.
     - Hmm...well there's no harm in trying it out though right? Maybe it'll save
       us some time.
+    - ONCE DIALOGUE ENDS PRESS "E" AGAIN TO PICK UP ITEM
   windowDialogue:
     names:
     - A.R.I.
@@ -797,6 +798,7 @@ MonoBehaviour:
     - STATION AI
     - A.R.I.
     - A.R.I.
+    - TUTORIAL
     sentences:
     - PLEASE INTERFACE WITH THE TERMINAL. IT WILL TAKE A BIT TO GAIN ACCESS TO THE
       NEXT AREA, PLEASE BE PATIENT.
@@ -814,6 +816,7 @@ MonoBehaviour:
       to the main lobby!
     - I'm going to search around some more. There's most likely some type of override
       or crafty cheatcode to pry this entrance open.
+    - Once dialogue ends press "E" again to interact with terminals
   plantDialogue:
     names:
     - A.R.I
@@ -911,6 +914,7 @@ MonoBehaviour:
   terminalSource: {fileID: 1490930400}
   terminalClip: {fileID: 8300000, guid: 078a6a7800affd94aad4531c5453c66c, type: 3}
   terminalCollider: {fileID: 1181156863}
+  SkipLevel: Level1Ending
 --- !u!114 &125167134
 MonoBehaviour:
   m_ObjectHideFlags: 0

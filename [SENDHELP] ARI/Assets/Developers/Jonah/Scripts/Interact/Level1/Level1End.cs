@@ -152,9 +152,6 @@ public class Level1End : MonoBehaviour
                 {
                     keyGrabbed = true;
 
-                    // Play sound on interact
-                    source.PlayOneShot(clip, 7f);
-
                     //Destroy object
                     Destroy(GameObject.FindWithTag("Phone"));
                     Debug.Log("Destroy " + "Phone");
