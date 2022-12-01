@@ -72,6 +72,9 @@ EditorBuildSettings:
     path: Assets/Developers/Jonah/Scenes/Lockdown.unity
     guid: 72b1294e2cee4c9448166f923a7b8b8e
   - enabled: 1
+    path: Assets/Developers/Jonah/Scenes/Level2Ending.unity
+    guid: f0564837e3116204b85176f685ad66bb
+  - enabled: 1
     path: Assets/Developers/Matt/Scenes/Phishing.unity
     guid: c6fab533e06edfe4d971e78ea385eb3f
   - enabled: 1
@@ -80,6 +83,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Developers/Matt/Scenes/Pre Quiz 2.unity
     guid: b98f9fbd4a0b1e34cb7ffbd8b2b95cad
+  - enabled: 1
+    path: Assets/Developers/Matt/Scenes/Phone.unity
+    guid: b1657368816a46142a682b427187af05
   - enabled: 1
     path: Assets/Developers/Jonah/Scenes/Level2PhishingSuccess.unity
     guid: 056d7a5369cbd2842aef4d990a30188c
