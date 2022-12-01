@@ -104,7 +104,7 @@ public class WebsiteManager : MonoBehaviour
         }
         else {
             Debug.Log("LOSER");
-            SceneToLoad = "Lockdown";
+            SceneToLoad = "Level2Part3";
         }
         Invoke("changeScene", 2f);
     }
