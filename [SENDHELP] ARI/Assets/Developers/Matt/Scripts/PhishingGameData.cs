@@ -22,16 +22,28 @@ public class PhishingGameData : MonoBehaviour
                                                 "Your docking itinerary\nDocking Duration: 6 days | Arrival: March 2, 2072Name: Ari | Confirmation Number: DJ93N5\nDeparture: March 7, 2072 | Location: CKE Port 309",
                                                 "Ari, remember to complete the tasks in the note Igave you in the power room.\nThanks"};
 
-    static List<string> choices = new List<string>() {
-        "sender address",       //0
-        "suspicious link",      //1
-        "poor writing",         //2
-        "generic greeting",     //3
-        "personal information", //4
-        "urgency",              //5
-        "nothing"               //6
-    };
     
+    /*
+    static List<string> choices = new List<string>() {
+        " 1. sender address",      
+        " 2. suspicious link",     
+        " 3. poor writing",        
+        " 4. generic greeting",    
+        " 5. personal information",
+        " 6. urgency",              
+        " 7. nothing"               
+    };
+    Answer Key
+    0:  123
+    1:  125
+    2:  156
+    3:  12
+    4:  1245
+    5:  24
+    6:  235
+    7:  nothing  
+    8:  nothing
+    */
 
     List<bool> usedMessages = new List<bool> {false, false, false, false, false, false, false, false, false, false};
     int numCorrect = 0;
@@ -45,7 +57,6 @@ public class PhishingGameData : MonoBehaviour
         PasswordTerminalTerminal.WriteLine("ARI, it seems we have scammers trying to \ninfiltrate our systems.");
         PasswordTerminalTerminal.WriteLine("\nCheck your inbox and identify each thing wrong \nwith the emails.");
         PasswordTerminalTerminal.WriteLine("\nPossible choices include \"sender address\", \n\"suspicious link\", \"spelling errors\", \nand \"nothing\"");
-        PasswordTerminalTerminal.WriteLine("\nType every correct choice then hit enter.\nFor example: \"sender address, suspicious link andspelling errors\" or \"nothing\"");
         PasswordTerminalTerminal.WriteLine("\nType open to get started");
         currMessage = rnd.Next(messages.Count);
         while(this.usedMessages[currMessage] == true) {
@@ -57,11 +68,15 @@ public class PhishingGameData : MonoBehaviour
         this.usedMessages[currMessage] = true;
         PasswordTerminalTerminal.ClearScreen();
         if(usedCount < messages.Count) {
+            Debug.Log(currMessage);
             PasswordTerminalTerminal.WriteLine("You have " + (messages.Count - usedCount) + " new messages");
-            PasswordTerminalTerminal.WriteLine("Phishing signs: sender address | suspicious link poor writing | generic greeting | \npersonal information | urgency");
+            PasswordTerminalTerminal.WriteLine("Phishing signs: \n1. sender address  | 4. generic greeting\n2. suspicious link | 5. personal information\n3. poor writing    | 6. urgency");
             PasswordTerminalTerminal.WriteLine("\nFrom: " + emailAddresses[currMessage]);
             PasswordTerminalTerminal.WriteLine(messages[currMessage]);
-            PasswordTerminalTerminal.WriteLine("\nType every sign you see, then hit enter");
+            if(currMessage == 6) 
+                PasswordTerminalTerminal.WriteLine("Type the number of each sign, then hit enter.");
+            else
+                PasswordTerminalTerminal.WriteLine("\nType the number of each sign, then hit enter.");
             PasswordTerminalTerminal.WriteLine("Otherwise type \"nothing\"");
         }
         else endScreen();
@@ -86,18 +101,6 @@ public class PhishingGameData : MonoBehaviour
         Invoke("DelayedAction", delayTime);
     }
 
-    /*
-    Answer Key
-    0:  0, 1, 2
-    1:  0, 1, 4
-    2:  0, 4, 5
-    3:  0, 1
-    4:  0, 1, 3, 4
-    5:  1, 3
-    6:  1, 2, 4
-    7:  6
-    8:  6
-    */
 
     void OnUserInput(string Input)
     {
@@ -110,53 +113,56 @@ public class PhishingGameData : MonoBehaviour
         }
         else {
             Input = Input.ToLower();
-            switch(currMessage) {
-                case(0):
-                    if(Input.Contains(choices[0]) && Input.Contains(choices[1]) && Input.Contains(choices[2]))
-                        if(!Input.Contains(choices[3]) && !Input.Contains(choices[4]) && !Input.Contains(choices[5]) && !Input.Contains(choices[6]))
+            if(usedCount < messages.Count) {
+                switch(currMessage) {
+                    case(0):
+                        if(Input.Contains("1") && Input.Contains("2") && Input.Contains("3"))
+                            if(!Input.Contains("4") && !Input.Contains("5") && !Input.Contains("6"))
+                                numCorrect++;
+                        break;
+                    case(1):
+                        if(Input.Contains("1") && Input.Contains("2") && Input.Contains("5"))
+                            if(!Input.Contains("3") && !Input.Contains("4") && !Input.Contains("6"))
+                                numCorrect++;
+                        break;
+                    case(2):
+                        if(Input.Contains("1") && Input.Contains("5") && Input.Contains("6"))
+                            if(!Input.Contains("2") && !Input.Contains("3") && !Input.Contains("4"))
+                                numCorrect++;
+                        break;
+                    case(3):
+                        if(Input.Contains("1") && Input.Contains("2"))
+                            if(!Input.Contains("3") && !Input.Contains("4") && !Input.Contains("5") && !Input.Contains("6"))
+                                numCorrect++;
+                        break;
+                    case(4):
+                        if(Input.Contains("1") && Input.Contains("2") && Input.Contains("4") && Input.Contains("5"))
+                            if(!Input.Contains("3") && !Input.Contains("6"))
+                                numCorrect++;
+                        break;
+                    case(5):
+                        if(Input.Contains("2") && Input.Contains("4"))
+                            if(!Input.Contains("1") && !Input.Contains("3") && !Input.Contains("5") && !Input.Contains("6"))
+                                numCorrect++;
+                        break;
+                    case(6):
+                        if(Input.Contains("2") && Input.Contains("3") && Input.Contains("5"))
+                            if(!Input.Contains("1") && !Input.Contains("4") && !Input.Contains("6"))
+                                numCorrect++;
+                        break;
+                    case(7):
+                        if(Input.ToLower().Contains("nothing") || Input == "")
                             numCorrect++;
-                    break;
-                case(1):
-                    if(Input.Contains(choices[0]) && Input.Contains(choices[1]) && Input.Contains(choices[4]))
-                        if(!Input.Contains(choices[2]) && !Input.Contains(choices[3]) && !Input.Contains(choices[5]) && !Input.Contains(choices[6]))
+                        break;
+                    case(8):
+                        if(Input.Contains("nothing") || Input == "")
                             numCorrect++;
-                    break;
-                case(2):
-                    if(Input.Contains(choices[0]) && Input.Contains(choices[4]) && Input.Contains(choices[5]))
-                        if(!Input.Contains(choices[1]) && !Input.Contains(choices[2]) && !Input.Contains(choices[3]) && !Input.Contains(choices[6]))
-                            numCorrect++;
-                    break;
-                case(3):
-                    if(Input.Contains(choices[0]) && Input.Contains(choices[1]))
-                        if(!Input.Contains(choices[2]) && !Input.Contains(choices[3]) && !Input.Contains(choices[4]) && !Input.Contains(choices[5]) && !Input.Contains(choices[6]))
-                            numCorrect++;
-                    break;
-                case(4):
-                    if(Input.Contains(choices[0]) && Input.Contains(choices[1]) && Input.Contains(choices[3]) && Input.Contains(choices[4]))
-                        if(!Input.Contains(choices[2]) && !Input.Contains(choices[5]) && !Input.Contains(choices[6]))
-                            numCorrect++;
-                    break;
-                case(5):
-                    if(Input.Contains(choices[1]) && Input.Contains(choices[3]))
-                        if(!Input.Contains(choices[0]) && !Input.Contains(choices[2]) && !Input.Contains(choices[4]) && !Input.Contains(choices[5]) && !Input.Contains(choices[6]))
-                            numCorrect++;
-                    break;
-                case(6):
-                    if(Input.Contains(choices[1]) && Input.Contains(choices[2]) && Input.Contains(choices[4]))
-                        if(!Input.Contains(choices[0]) && !Input.Contains(choices[3]) && !Input.Contains(choices[5]) && !Input.Contains(choices[6]))
-                            numCorrect++;
-                    break;
-                case(7):
-                    if(Input.Contains(choices[6]))
-                        numCorrect++;
-                    break;
-                case(8):
-                    if(Input.Contains(choices[6]))
-                        numCorrect++;
-                    break;
-                default:
-                    break;
+                        break;
+                    default:
+                        break;
+                }
             }
+            Debug.Log("Num Correct: " + numCorrect);
             usedMessages[currMessage] = true;
             if(this.usedCount < (messages.Count - 1))
                 while(this.usedMessages[currMessage]) {
