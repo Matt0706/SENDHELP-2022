@@ -12,15 +12,15 @@ public class PhishingGameData : MonoBehaviour
     int currMessage = 0;
     bool onStartScreen = true;
     List<string> emailAddresses = new List<string>() { "noreply@aamazon.com", "microsoftbilling@c2asdhj398.com", "ITsupport@xyz.net", "trustedbank@trustedbank.com", "HR@fakecompany.com", "spacesoftware@spacesoftware.com", "Bisa<EZheng@Pacific.com>", "Fitzgerald Docking & Co.\n<Fits@FitzDockCo.com>", "CaptainAI@cyber.net"};
-    List<string> messages = new List<string>() { "Hello ARI,\nYou have been chosen as a recipient of a 100 \ndollars gift card! Click the link below to claim it:\namazom.com/giftcard",
-                                                "Hello, it is required for you to update your \ncredit card information. Please use the link \nbelow to enter your credit card number.\nbilling.micros0ft.com", 
-                                                "Hello ARI, there seems to be an issue with your \naccount login credentials. Please reply to this \nmessage with your username and password to this \nemail to rectify this issue.\nThank you, IT", 
-                                                "Hello valued customer,\nWe regret to inform you that your online banking access has been restricted. Please use the link \nbelow to sign in and fix this issue.\ntrustedbanklogin.scamsite.net", 
-                                                "Dear employee,\nYou are required to immediately review and \nelectronically sign our updated employee code of conduct. CLICK HERE to open the document.\nThank you, HR, FakeCompany",
-                                                "Dear user, we are ending support for all outdatedversions of the current software you are on as of 2/8/2072 12:00:00 A.M.\nClick the link below immediately to install the\nlatest version of the software",
-                                                "Review your information\nDue to recent activity, we have temporarily \nsuspended your account until verification. Pls\nsend us your information by 11/2/2072 4:55:28 PM To continue using our service, we advise you to\nupdate your account information.\nbanking.info.com",
-                                                "Your docking itinerary\nDocking Duration: 6 days | Arrival: March 2, 2072Name: Ari | Confirmation Number: DJ93N5\nDeparture: March 7, 2072 | Location: CKE Port 309",
-                                                "Ari, remember to complete the tasks in the note Igave you in the power room.\nThanks"};
+    List<string> messages = new List<string>()  /*0*/ {"Hello ARI,\nYou have been chosen as a recipient of a 100 \ndollars gift card! Click the link below to claim it:\namazom.com/giftcard",
+                                                /*1*/"Hello, it is required for you to update your \ncredit card information. Please use the link \nbelow to enter your credit card number.\nbilling.micros0ft.com", 
+                                                /*2*/"Hello ARI, there seems to be an issue with your \naccount login credentials. Please reply to this \nmessage with your username and password to this \nemail to rectify this issue.\nThank you, IT", 
+                                                /*3*/"Hello valued customer,\nWe regret to inform you that your online banking access has been restricted. Please use the link \nbelow to sign in and fix this issue.\ntrustedbanklogin.scamsite.net", 
+                                                /*4*/"Dear employee,\nYou are required to immediately review and \nelectronically sign our updated employee code of conduct. CLICK HERE to open the document.\nThank you, HR, FakeCompany",
+                                                /*5*/"Dear user, we are ending support for all outdatedversions of the current software you are on as of 2/8/2072 12:00:00 A.M.\nClick the link below immediately to install the\nlatest version of the software",
+                                                /*6*/"Review your information\nDue to recent activity, we have temporarily \nsuspended your account until verification. Pls\nsend us your information by 11/2/2072 4:55:28 PM To continue using our service, we advise you to\nupdate your account information.\nbanking.info.com",
+                                                /*7*/"Your docking itinerary\nDocking Duration: 6 days | Arrival: March 2, 2072Name: Ari | Confirmation Number: DJ93N5\nDeparture: March 7, 2072 | Location: CKE Port 309",
+                                                /*8*/"Ari, remember to complete the tasks in the note Igave you in the power room.\nThanks"};
 
     
     /*
