@@ -104,7 +104,7 @@ public class WebsiteManager : MonoBehaviour
         }
         else {
             Debug.Log("LOSER");
-            SceneToLoad = "Level2Part3";
+            SceneToLoad = "Websites";
         }
         Invoke("changeScene", 2f);
     }
