@@ -914,7 +914,7 @@ MonoBehaviour:
   terminalSource: {fileID: 1490930400}
   terminalClip: {fileID: 8300000, guid: 078a6a7800affd94aad4531c5453c66c, type: 3}
   terminalCollider: {fileID: 1181156863}
-  SkipLevel: Level1Ending
+  SkipLevel: Level01Terminal3
 --- !u!114 &125167134
 MonoBehaviour:
   m_ObjectHideFlags: 0
