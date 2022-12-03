@@ -37975,9 +37975,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6798947262871635355, guid: 6061797821f3be649b18b987c0e70012, type: 3}
+      propertyPath: m_Volume
+      value: 0.798
+      objectReference: {fileID: 0}
+    - target: {fileID: 6798947262871635355, guid: 6061797821f3be649b18b987c0e70012, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 5ddfb636939dfb9448f03c79b247e637, type: 3}
+      objectReference: {fileID: 8300000, guid: 6515811dc7373aa46bb5afaa6f08c101, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6061797821f3be649b18b987c0e70012, type: 3}
 --- !u!1 &1695704397 stripped
@@ -48323,7 +48327,7 @@ MonoBehaviour:
   observationPad:
     names: []
     sentences: []
-  airlockPad:
+  airlockSwipe:
     names: []
     sentences: []
   swipeDialogue:

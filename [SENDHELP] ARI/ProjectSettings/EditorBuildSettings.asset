@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/Developers/Erin/Scenes/Novice/Level1Ending.unity
     guid: 9c60a9aa63bf32d4491d83e501d4ff24
   - enabled: 1
+    path: Assets/Developers/Jonah/Scenes/Level02AfterLockdown.unity
+    guid: 5cd38f331b65c044fb8559cf3fa2309d
+  - enabled: 1
     path: Assets/Developers/Matt/Scenes/Power.unity
     guid: 9f8c32ceb86447346a3f8949ac34f93c
   - enabled: 1
