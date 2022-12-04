@@ -22,7 +22,7 @@ public class PhishingGameData : MonoBehaviour
                                                 /*7*/"Your docking itinerary\nDocking Duration: 6 days | Arrival: March 2, 2072Name: Ari | Confirmation Number: DJ93N5\nDeparture: March 7, 2072 | Location: CKE Port 309",
                                                 /*8*/"Ari, remember to complete the tasks in the note Igave you in the power room.\nThanks"};
 
-    
+ 
     /*
     static List<string> choices = new List<string>() {
         " 1. sender address",      
