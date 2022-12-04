@@ -11,7 +11,7 @@ public class PhishingGameData : MonoBehaviour
     public int delayTime;
     int currMessage = 0;
     bool onStartScreen = true;
-    List<string> emailAddresses = new List<string>() { "noreply@aamazon.com", "microsoftbilling@c2asdhj398.com", "ITsupport@xyz.net", "trustedbank@trustedbank.com", "HR@fakecompany.com", "spacesoftware@spacesoftware.com", "Bisa<EZheng@Pacific.com>", "Fitzgerald Docking & Co.\n<Fits@FitzDockCo.com>", "CaptainAI@cyber.net"};
+    List<string> emailAddresses = new List<string>() { "noreply@aamazon.com", "microsoftbilling@c2asdhj398.com", "ITsupport@xyz.net", "trustedbank@trustedbank.com", "HR@company.com", "spacesoftware@spacesoftware.com", "Bisa<EZheng@Pacific.com>", "Fitzgerald Docking & Co.\n<Fits@FitzDockCo.com>", "CaptainAI@cyber.net"};
     List<string> messages = new List<string>()  /*0*/ {"Hello ARI,\nYou have been chosen as a recipient of a 100 \ndollars gift card! Click the link below to claim it:\namazom.com/giftcard",
                                                 /*1*/"Hello, it is required for you to update your \ncredit card information. Please use the link \nbelow to enter your credit card number.\nbilling.micros0ft.com", 
                                                 /*2*/"Hello ARI, there seems to be an issue with your \naccount login credentials. Please reply to this \nmessage with your username and password to this \nemail to rectify this issue.\nThank you, IT", 
@@ -38,7 +38,7 @@ public class PhishingGameData : MonoBehaviour
     1:  125
     2:  156
     3:  12
-    4:  1245
+    4:  245
     5:  24
     6:  235
     7:  nothing  
@@ -116,37 +116,37 @@ public class PhishingGameData : MonoBehaviour
             if(usedCount < messages.Count) {
                 switch(currMessage) {
                     case(0):
-                        if(Input.Contains("1") && Input.Contains("2") && Input.Contains("3"))
+                        if(Input.Contains("1") || Input.Contains("2") || Input.Contains("3"))
                             if(!Input.Contains("4") && !Input.Contains("5") && !Input.Contains("6"))
                                 numCorrect++;
                         break;
                     case(1):
-                        if(Input.Contains("1") && Input.Contains("2") && Input.Contains("5"))
+                        if(Input.Contains("1") || Input.Contains("2") || Input.Contains("5"))
                             if(!Input.Contains("3") && !Input.Contains("4") && !Input.Contains("6"))
                                 numCorrect++;
                         break;
                     case(2):
-                        if(Input.Contains("1") && Input.Contains("5") && Input.Contains("6"))
+                        if(Input.Contains("1") || Input.Contains("5") || Input.Contains("6"))
                             if(!Input.Contains("2") && !Input.Contains("3") && !Input.Contains("4"))
                                 numCorrect++;
                         break;
                     case(3):
-                        if(Input.Contains("1") && Input.Contains("2"))
+                        if(Input.Contains("1") || Input.Contains("2"))
                             if(!Input.Contains("3") && !Input.Contains("4") && !Input.Contains("5") && !Input.Contains("6"))
                                 numCorrect++;
                         break;
                     case(4):
-                        if(Input.Contains("1") && Input.Contains("2") && Input.Contains("4") && Input.Contains("5"))
-                            if(!Input.Contains("3") && !Input.Contains("6"))
+                        if(Input.Contains("2") || Input.Contains("4") && Input.Contains("5"))
+                            if(!Input.Contains("1") && !Input.Contains("3") && !Input.Contains("6"))
                                 numCorrect++;
                         break;
                     case(5):
-                        if(Input.Contains("2") && Input.Contains("4"))
+                        if(Input.Contains("2") || Input.Contains("4"))
                             if(!Input.Contains("1") && !Input.Contains("3") && !Input.Contains("5") && !Input.Contains("6"))
                                 numCorrect++;
                         break;
                     case(6):
-                        if(Input.Contains("2") && Input.Contains("3") && Input.Contains("5"))
+                        if(Input.Contains("2") || Input.Contains("3") || Input.Contains("5"))
                             if(!Input.Contains("1") && !Input.Contains("4") && !Input.Contains("6"))
                                 numCorrect++;
                         break;
