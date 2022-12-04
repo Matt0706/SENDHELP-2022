@@ -83,7 +83,7 @@ public class PhishingGameData : MonoBehaviour
     }
 
     void endScreen(){
-        PasswordTerminalTerminal.WriteLine("You got " + numCorrect + " out of " + messages.Count + " completely correct.");
+        PasswordTerminalTerminal.WriteLine("You got " + numCorrect + " out of " + messages.Count + " correct.");
         double percentCorrect = numCorrect / (double)messages.Count;
         if(percentCorrect > .5) {
             PasswordTerminalTerminal.WriteLine("Great work ARI!");
