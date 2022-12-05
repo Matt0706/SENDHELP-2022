@@ -128017,7 +128017,7 @@ MonoBehaviour:
   enginepadCollider2: {fileID: 1415610098}
   enginepadCollider3: {fileID: 569046875}
   notepadCollider: {fileID: 390507525}
-  SceneToLoad: LevelSelection
+  SceneToLoad: Post Quiz 2
   delayTime: 3
   levelDone: 0
   anim: {fileID: 1304427068}
